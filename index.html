@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeoGenius</title>
 
-     <!-- Link to CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <!-- Link to JS -->
-    <script src="js/script.js"></script>  
-    
-     <section class="hero">
+  <section class="hero">
+    <!-- Username + title card -->
+  <div class="glass-card username-card">
     <h1>GeoGenius Quiz</h1>
     <p>Enter your username to begin the quiz.</p>
-  </section>
+    <input id="username" type="text" placeholder="E.g. Alex" required />
+    <button class="btn" id="save-name" type="button">Save</button>
+  </div>
+
+  <!-- Difficulty cards -->
+  <div class="difficulty-container">
+    <div class="glass-card easy">
+      <h3>Easy</h3>
+      <p>Basic questions for beginners.</p>
+      <button class="btn" type="button" data-level="easy">Start</button>
+    </div>
+
+    <div class="glass-card medium">
+      <h3>Medium</h3>
+      <p>Intermediate challenge.</p>
+      <button class="btn" type="button" data-level="medium">Start</button>
+    </div>
+
+    <div class="glass-card hard">
+      <h3>Hard</h3>
+      <p>Difficult questions for experts.</p>
+      <button class="btn" type="button" data-level="hard">Start</button>
+    </div>
+  </div>
+</section>
+
+  <!-- Link to JS (load last so DOM is ready) -->
+  <script src="js/script.js"></script>
 </body>
 </html>

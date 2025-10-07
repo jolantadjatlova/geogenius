@@ -26,3 +26,97 @@
   z-index: 1;
   color: white;
 }
+
+/* === Glassmorphism base style === */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+/* === Username card === */
+.username-card {
+  max-width: 400px;
+  width: 90%;
+  padding: 2rem;
+  margin-bottom: 40px;
+}
+
+.username-card h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.username-card p {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Input + Save button */
+.username-card input {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* === Difficulty cards === */
+.difficulty-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.difficulty-container .glass-card {
+  width: 200px;
+  padding: 1.5rem;
+}
+
+.easy {
+  background: rgba(0, 180, 216, 0.2);
+}
+.medium {
+  background: rgba(255, 165, 0, 0.2);
+}
+.hard {
+  background: rgba(220, 20, 60, 0.2);
+}
+
+.difficulty-container h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.difficulty-container p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
