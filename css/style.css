@@ -1,0 +1,28 @@
+.hero {
+  min-height: 100vh; /* full screen */
+  display: grid; /* centers text */
+  place-items: center;
+  text-align: center;
+
+  /* background image */
+  background: url("../images/hero.png") center/cover no-repeat;
+
+  /* optional overlay for contrast */
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* dark overlay */
+  z-index: 0;
+}
+
+/* keep text visible above overlay */
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
