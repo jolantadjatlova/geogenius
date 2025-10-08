@@ -1,25 +1,28 @@
-.hero {
-  min-height: 100vh; /* full screen */
-  display: grid; /* centers text */
-  place-items: center;
-  text-align: center;
-
-  /* background image */
-  background: url("../images/hero.png") center/cover no-repeat;
-
-  /* optional overlay for contrast */
-  position: relative;
+/* Colour variables for theme palette */
+:root{
+  --easy:   #4FC3F7;
+  --medium: #FFB74D;
+  --hard:   #E57373;
+  --accent: #00838F;
+  --bg:     #F2F2F2;
 }
 
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: url("../images/hero.png") center/cover no-repeat;
+  position: relative;
+}
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35); /* dark overlay */
+  background: rgba(0, 0, 0, 0.35);
   z-index: 0;
 }
-
-/* keep text visible above overlay */
 .hero h1,
 .hero p {
   position: relative;
@@ -27,33 +30,36 @@
   color: white;
 }
 
-/* === Glassmorphism base style === */
+/* Transparent Card base */
 .glass-card {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;     /* base is see-through */
   text-align: center;
-  color: #fff;
   position: relative;
   z-index: 1;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.55);
+  box-shadow:
+    0 16px 36px rgba(0,0,0,.25),
+    inset 0 1px 0 rgba(255,255,255,.45);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
+.glass-card::after { content: none; }
 
-/* === Username card === */
+/* Username card */
 .username-card {
   max-width: 400px;
   width: 90%;
   padding: 2rem;
   margin-bottom: 40px;
-}
 
+
+  
+}
 .username-card h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
-
 .username-card p {
   font-size: 1.1rem;
   margin-bottom: 1.2rem;
@@ -71,6 +77,7 @@
   margin-bottom: 1rem;
 }
 
+/* Buttons */
 .btn {
   background: rgba(255, 255, 255, 0.25);
   border: none;
@@ -81,12 +88,9 @@
   font-weight: bold;
   transition: background 0.3s ease;
 }
+.btn:hover { background: rgba(255, 255, 255, 0.4); }
 
-.btn:hover {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-/* === Difficulty cards === */
+/* Difficulty cards */
 .difficulty-container {
   display: flex;
   justify-content: center;
@@ -95,28 +99,63 @@
   z-index: 1;
   position: relative;
 }
-
 .difficulty-container .glass-card {
   width: 200px;
   padding: 1.5rem;
 }
 
-.easy {
-  background: rgba(0, 180, 216, 0.2);
-}
-.medium {
-  background: rgba(255, 165, 0, 0.2);
-}
-.hard {
-  background: rgba(220, 20, 60, 0.2);
-}
-
+/* Headings & copy in cards */
 .difficulty-container h3 {
   margin-bottom: 0.5rem;
   font-size: 1.3rem;
 }
-
 .difficulty-container p {
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
+
+/* put content above overlays */
+.difficulty-container .glass-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* solid colored overlays */
+.difficulty-container .glass-card.easy::before,
+.difficulty-container .glass-card.medium::before,
+.difficulty-container .glass-card.hard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 22px;
+}
+.difficulty-container .glass-card.easy::before {
+  background: linear-gradient(180deg, #4FC3F7 0%, #29B6F6 100%);
+}
+.difficulty-container .glass-card.medium::before {
+  background: linear-gradient(180deg, #FFB74D 0%, #FFA726 100%);
+}
+.difficulty-container .glass-card.hard::before {
+  background: linear-gradient(180deg, #E57373 0%, #EF5350 100%);
+}
+
+/* hover */
+.difficulty-container .glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 24px 56px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.5);
+  border-color: rgba(255,255,255,.8);
+}
+
+/* Accessible text colors for difficulty cards */
+.difficulty-container .glass-card h3 { color: #0F172A; }
+.difficulty-container .glass-card p  { color: #1F2937; }
+
+/* Card buttons */
+.difficulty-container .btn {
+  background: var(--accent);
+  color: #F2F2F2;
+}
+.difficulty-container .btn:hover { filter: brightness(0.9); }
