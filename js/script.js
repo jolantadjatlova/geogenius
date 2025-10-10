@@ -5,6 +5,44 @@ const saveBtn    = document.getElementById('save-name');
 const errorLine  = document.getElementById('username-error');
 const levelBtns  = document.querySelectorAll('[data-level]');
 
+// --- Quiz sample data (temp until API) ------------------------------------
+const SAMPLE_QUESTIONS = {
+  easy: [
+    { q: "Which continent is France in?", correct: "Europe", options: ["Europe","Asia","Africa","South America"] },
+    { q: "The capital of Spain is…",      correct: "Madrid", options: ["Barcelona","Madrid","Seville","Valencia"] },
+    { q: "The UK is an island in the…",   correct: "Atlantic Ocean", options: ["Indian Ocean","Pacific Ocean","Atlantic Ocean","Arctic Ocean"] },
+  ],
+  medium: [
+    { q: "Mount Kilimanjaro is in which country?", correct: "Tanzania", options: ["Kenya","Tanzania","Uganda","Ethiopia"] },
+    { q: "The Danube flows into which sea?",       correct: "Black Sea", options: ["North Sea","Mediterranean","Black Sea","Baltic Sea"] },
+    { q: "Which desert is in northern China?",     correct: "Gobi", options: ["Sahara","Atacama","Gobi","Kalahari"] },
+  ],
+  hard: [
+    { q: "The capital of Kazakhstan is…", correct: "Astana", options: ["Almaty","Astana","Bishkek","Tashkent"] },
+    { q: "Lake Baikal is located in…",    correct: "Russia", options: ["Mongolia","China","Kazakhstan","Russia"] },
+    { q: "The Strait of Malacca links…",  correct: "Indian & Pacific", options: ["Arctic & Atlantic","Indian & Pacific","Atlantic & Indian","Pacific & Arctic"] },
+  ],
+};
+
+// --- Quiz UI refs ----------------------------------------------------------
+const UI2 = {
+  screens: {
+    hero: document.querySelector('.hero'),
+    quiz: document.getElementById('quiz'),
+    results: document.getElementById('results'),
+  },
+  level: document.getElementById('quiz-level'),
+  progress: document.getElementById('quiz-progress'),
+  question: document.getElementById('question'),
+  answers: Array.from(document.querySelectorAll('.answer-btn')),
+  finalLine: document.getElementById('final-line'),
+  playAgain: document.getElementById('play-again'),
+};
+
+// state + helpers
+let quizState = { list: [], idx: 0, score: 0, level: null };
+function show(el){ el.classList.remove('hide'); }
+function hide(el){ el.classList.add('hide'); }
 // Simple in-memory model (current session)
 const session = {
   username: '',
