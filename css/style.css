@@ -143,6 +143,38 @@ body { overflow-y: hidden; }
 /* optional highlight for picked difficulty */
 .difficulty-container .btn.active { outline:2px solid #fff; box-shadow:0 0 0 3px rgba(255,255,255,.25); }
 
+/* Quiz screen */
+/* hide helper for toggling quiz/results */
+.hide { display: none !important; }
+
+/* quiz layout */
+.quiz-card, .results-card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.quiz-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #fff;
+  opacity: .9;
+}
+
+.answers {
+  display: grid;
+  gap: 12px;
+  max-width: 520px;
+  margin: 1rem auto 0;
+  grid-template-columns: 1fr;
+}
+
+/* answer states (used only on quiz answer buttons) */
+.btn.correct { filter: brightness(1.15); box-shadow: 0 0 0 2px rgba(255,255,255,.35) inset; }
+.btn.wrong   { opacity: .85; }
+.btn.disabled { pointer-events: none; opacity: .6; }
 /* Media queries*/
 @media (max-width: 820px) {
   .difficulty-container { gap: 16px; padding-inline: 8px; }
