@@ -151,7 +151,12 @@ levelBtns.forEach(btn => {
     // For now: replace this with routing or showing the quiz screen
     // e.g., window.location.href = 'quiz.html?level=' + encodeURIComponent(level);
     console.log('Starting quiz →', { user: session.username, level: session.difficulty });
-    alert(`Starting ${level.toUpperCase()} quiz for ${session.username}`);
+    const hero = document.querySelector('.hero');
+const quiz = document.getElementById('quiz');
+if (quiz) {
+  hero?.classList.add('hide');   // hide landing
+  quiz.classList.remove('hide'); // show quiz
+}
   });
 });
 
