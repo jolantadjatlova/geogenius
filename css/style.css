@@ -40,6 +40,13 @@ body { overflow-y: hidden; }
   color: #fff;
 }
 
+/* Global page background (same image+overlay as hero) */
+.page-bg {
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("../images/hero.png") center / cover no-repeat fixed;
+}
+
 /* card base */
 .glass-card {
   background: transparent;
