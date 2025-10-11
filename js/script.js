@@ -39,10 +39,6 @@ const UI2 = {
   playAgain: document.getElementById('play-again'),
 };
 
-// state + helpers
-let quizState = { list: [], idx: 0, score: 0, level: null };
-function show(el){ el.classList.remove('hide'); }
-function hide(el){ el.classList.add('hide'); }
 // Simple in-memory model (current session)
 const session = {
   username: '',
@@ -52,6 +48,108 @@ const session = {
 // LocalStorage keys
 const LS_PROFILE_KEY = 'geogenius/profile';
 const LS_LAST_SESSION_KEY = 'geogenius/lastSession';
+
+// --- CORE QUIZ FUNCTIONS ---------------------------------------------------
+
+// simple quiz state
+let quizState = { list: [], idx: 0, score: 0, level: null };
+
+// screen helpers (reuse your .hide CSS)
+function show(el){ el.classList.remove('hide'); }
+function hide(el){ el.classList.add('hide'); }
+
+function startQuiz(level){
+  // record level and build question list from samples
+  quizState.level = level;
+  quizState.list = [...SAMPLE_QUESTIONS[level]]; // copy
+  quizState.idx = 0;
+  quizState.score = 0;
+
+  // swap screens
+  const hero = UI2.screens.hero;
+  const quiz = UI2.screens.quiz;
+  const results = UI2.screens.results;
+  hide(results);
+  hide(hero);
+  show(quiz);
+
+  // header labels
+  UI2.level.textContent = level.toUpperCase();
+
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const total = quizState.list.length;
+  if (quizState.idx >= total) return endQuiz();
+
+  const item = quizState.list[quizState.idx];
+
+  UI2.progress.textContent = `Q${quizState.idx + 1}/${total}`;
+  UI2.question.textContent = item.q;
+
+  // shuffled options
+  const opts = [...item.options].sort(() => Math.random() - 0.5);
+
+  // reset + wire answer buttons
+  UI2.answers.forEach((btn, i) => {
+    btn.classList.remove('correct','wrong','disabled','active');
+    btn.disabled = false;
+    btn.textContent = opts[i];
+    btn.onclick = () => handleAnswer(btn, item.correct);
+  });
+}
+
+function handleAnswer(btn, correctText){
+  // lock all
+  UI2.answers.forEach(b => { b.disabled = true; b.classList.add('disabled'); });
+
+  const chosen = btn.textContent;
+  const isRight = (chosen === correctText);
+
+  if (isRight) {
+    btn.classList.add('correct');
+    quizState.score += 1;
+  } else {
+    btn.classList.add('wrong');
+    // highlight the correct one
+    const c = UI2.answers.find(b => b.textContent === correctText);
+    if (c) c.classList.add('correct');
+  }
+
+  // move to next
+  setTimeout(() => {
+    quizState.idx += 1;
+    renderQuestion();
+  }, 900);
+}
+
+function endQuiz(){
+  hide(UI2.screens.quiz);
+  show(UI2.screens.results);
+
+  // store score in lastSession you already persist
+  try {
+    const raw = localStorage.getItem(LS_LAST_SESSION_KEY);
+    const last = raw ? JSON.parse(raw) : {};
+    last.score = quizState.score;
+    last.finishedAt = new Date().toISOString();
+    localStorage.setItem(LS_LAST_SESSION_KEY, JSON.stringify(last));
+  } catch {}
+
+  UI2.finalLine.textContent =
+    `${session.username}, you scored ${quizState.score} / ${quizState.list.length}.`;
+}
+
+// Play again -> back to hero
+if (UI2.playAgain){
+  UI2.playAgain.addEventListener('click', () => {
+    show(UI2.screens.hero);
+    hide(UI2.screens.quiz);
+    hide(UI2.screens.results);
+    quizState = { list: [], idx: 0, score: 0, level: null };
+  });
+}
 
 // --- helpers ---------------------------------------------------------------
 
@@ -151,14 +249,10 @@ levelBtns.forEach(btn => {
     // For now: replace this with routing or showing the quiz screen
     // e.g., window.location.href = 'quiz.html?level=' + encodeURIComponent(level);
     console.log('Starting quiz →', { user: session.username, level: session.difficulty });
-    const hero = document.querySelector('.hero');
-const quiz = document.getElementById('quiz');
-if (quiz) {
-  hero?.classList.add('hide');   // hide landing
-  quiz.classList.remove('hide'); // show quiz
-}
-  });
+    startQuiz(level);
+});
 });
 
+
 // Initialize disabled state on load
-updateLevelButtonsState();
+updateLevelButtonsState(); 
