@@ -413,3 +413,7 @@ body {
     margin-top: -1.5rem;
   }
 }
+/* allow vertical scrolling on small & medium screens only */
+@media (max-width: 1024px) {
+  body { overflow-y: auto; }
+}
