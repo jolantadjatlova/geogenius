@@ -103,7 +103,7 @@ function renderQuestion(){
   const item = quizState.list[quizState.idx];
 
   UI2.progress.textContent = `Q${quizState.idx + 1}/${total}`;
-  UI2.question.textContent = item.q;
+  UI2.question.innerHTML = item.q;
 
   // shuffled options
   const opts = [...item.options].sort(() => Math.random() - 0.5);
@@ -112,7 +112,7 @@ function renderQuestion(){
   UI2.answers.forEach((btn, i) => {
     btn.classList.remove('correct','wrong','disabled','active');
     btn.disabled = false;
-    btn.textContent = opts[i];
+    btn.innerHTML = opts[i];
     btn.onclick = () => handleAnswer(btn, item.correct);
   });
 }
