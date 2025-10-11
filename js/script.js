@@ -1,5 +1,3 @@
-
-// Selectors
 const nameInput = document.getElementById('username');
 const saveBtn    = document.getElementById('save-name');
 const errorLine  = document.getElementById('username-error');
@@ -49,6 +47,26 @@ const session = {
 const LS_PROFILE_KEY = 'geogenius/profile';
 const LS_LAST_SESSION_KEY = 'geogenius/lastSession';
 
+// --- API loader
+async function loadQuestions(level){
+  const amount = 3; // same as your sample length
+  const url = `https://opentdb.com/api.php?amount=${amount}&category=22&difficulty=${level}&type=multiple`;
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    if (data.response_code !== 0) throw new Error('OpenTDB response_code != 0');
+    // map into your shape
+    return data.results.map(item => ({
+      q: item.question,                          // raw (may contain &quot; etc.)
+      correct: item.correct_answer,              // raw
+      options: [item.correct_answer, ...item.incorrect_answers], // raw
+    }));
+  } catch (e){
+    console.warn('API failed, using samples:', e);
+    return [...SAMPLE_QUESTIONS[level]];
+  }
+}
+
 // --- CORE QUIZ FUNCTIONS ---------------------------------------------------
 
 // simple quiz state
@@ -58,12 +76,11 @@ let quizState = { list: [], idx: 0, score: 0, level: null };
 function show(el){ el.classList.remove('hide'); }
 function hide(el){ el.classList.add('hide'); }
 
-function startQuiz(level){
-  // record level and build question list from samples
+async function startQuiz(level){
   quizState.level = level;
-  quizState.list = [...SAMPLE_QUESTIONS[level]]; // copy
   quizState.idx = 0;
   quizState.score = 0;
+
 
   // swap screens
   const hero = UI2.screens.hero;
@@ -75,7 +92,7 @@ function startQuiz(level){
 
   // header labels
   UI2.level.textContent = level.toUpperCase();
-
+  quizState.list = await loadQuestions(level);
   renderQuestion();
 }
 
