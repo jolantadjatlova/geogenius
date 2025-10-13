@@ -4,69 +4,6 @@ const errorLine = document.getElementById("username-error");
 const levelBtns = document.querySelectorAll("[data-level]");
 const heroRef = document.querySelector(".hero");
 const highScoresRef = JSON.parse(localStorage.getItem("highScores")) || [];
-const SAMPLE_QUESTIONS = {
-  easy: [
-    {
-      q: "Which continent is France in?",
-      correct: "Europe",
-      options: ["Europe", "Asia", "Africa", "South America"],
-    },
-    {
-      q: "The capital of Spain is…",
-      correct: "Madrid",
-      options: ["Barcelona", "Madrid", "Seville", "Valencia"],
-    },
-    {
-      q: "The UK is an island in the…",
-      correct: "Atlantic Ocean",
-      options: [
-        "Indian Ocean",
-        "Pacific Ocean",
-        "Atlantic Ocean",
-        "Arctic Ocean",
-      ],
-    },
-  ],
-  medium: [
-    {
-      q: "Mount Kilimanjaro is in which country?",
-      correct: "Tanzania",
-      options: ["Kenya", "Tanzania", "Uganda", "Ethiopia"],
-    },
-    {
-      q: "The Danube flows into which sea?",
-      correct: "Black Sea",
-      options: ["North Sea", "Mediterranean", "Black Sea", "Baltic Sea"],
-    },
-    {
-      q: "Which desert is in northern China?",
-      correct: "Gobi",
-      options: ["Sahara", "Atacama", "Gobi", "Kalahari"],
-    },
-  ],
-  hard: [
-    {
-      q: "The capital of Kazakhstan is…",
-      correct: "Astana",
-      options: ["Almaty", "Astana", "Bishkek", "Tashkent"],
-    },
-    {
-      q: "Lake Baikal is located in…",
-      correct: "Russia",
-      options: ["Mongolia", "China", "Kazakhstan", "Russia"],
-    },
-    {
-      q: "The Strait of Malacca links…",
-      correct: "Indian & Pacific",
-      options: [
-        "Arctic & Atlantic",
-        "Indian & Pacific",
-        "Atlantic & Indian",
-        "Pacific & Arctic",
-      ],
-    },
-  ],
-};
 
 // Quiz refs
 
@@ -108,8 +45,9 @@ async function loadQuestions(level) {
       options: [item.correct_answer, ...item.incorrect_answers],
     }));
   } catch (e) {
-    console.warn("API failed, using samples:", e);
-    return [...SAMPLE_QUESTIONS[level]];
+    console.warn("API failed:", e);
+    handleApiError();    
+  throw e;              
   }
 }
 
@@ -136,6 +74,20 @@ function showOrHide(elements, showElement) {
     }
   });
 }
+// API error handler
+
+function handleApiError() {
+  // Hide the quiz screen if we showed it
+  showOrHide([quizRefs.screens.quiz], true);
+  // Return user to the hero/start screen
+  showOrHide([quizRefs.screens.hero], false);
+
+  alert("Error fetching data. Please try again later.");
+  setTimeout(() => {
+    location.reload();
+  }, 1000);
+}
+
 // Start the game
 
 async function startQuiz(level) {
@@ -154,8 +106,12 @@ async function startQuiz(level) {
   // Start of quiz setup
 
   quizRefs.level.textContent = level.toUpperCase();
+  try {
+
   quizState.list = await loadQuestions(level);
   renderQuestion();
+  } catch (e) {
+}
 }
 
 // Display next question and update progress (end if done)
