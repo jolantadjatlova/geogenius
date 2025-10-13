@@ -1,4 +1,5 @@
 /* global styles */
+
 html,
 body {
   height: 100%;
@@ -11,6 +12,7 @@ body {
 }
 
 /* theme */
+
 :root {
   --easy: #4fc3f7;
   --medium: #ffb74d;
@@ -20,6 +22,7 @@ body {
 }
 
 /* navbar */
+
 .custom-navbar {
   background: var(--accent);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
@@ -54,6 +57,7 @@ body {
 }
 
 /* card base */
+
 .glass-card {
   background: transparent;
   text-align: center;
@@ -72,6 +76,7 @@ body {
 }
 
 /* username card */
+
 .username-card {
   max-width: 400px;
   width: 90%;
@@ -99,6 +104,7 @@ body {
 }
 
 /* buttons */
+
 .btn {
   background: rgba(255, 255, 255, 0.25);
   border: none;
@@ -114,6 +120,7 @@ body {
 }
 
 /* difficulty cards */
+
 .difficulty-container {
   display: flex;
   justify-content: center;
@@ -132,10 +139,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 190px; /* tweak until all three look identical */
+  min-height: 190px;
 }
 
-/* keep the Start button aligned at the bottom of each card */
 .difficulty-container .glass-card .btn {
   margin-top: auto;
 }
@@ -155,6 +161,7 @@ body {
 }
 
 /* colored overlays */
+
 .difficulty-container .glass-card.easy::before,
 .difficulty-container .glass-card.medium::before,
 .difficulty-container .glass-card.hard::before {
@@ -175,6 +182,7 @@ body {
 }
 
 /* hover */
+
 .difficulty-container .glass-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.3),
@@ -182,7 +190,8 @@ body {
   border-color: rgba(255, 255, 255, 0.8);
 }
 
-/* accessible text */
+/* Text colours for difficulty cards */
+
 .difficulty-container .glass-card h3 {
   color: #0f172a;
 }
@@ -191,6 +200,7 @@ body {
 }
 
 /* card buttons */
+
 .difficulty-container .btn {
   background: var(--accent);
   color: #f2f2f2;
@@ -199,7 +209,7 @@ body {
   filter: brightness(0.9);
 }
 
-/* form and state helpers */
+/* Form errors, disabled buttons, and active level state */
 
 .form-error {
   margin: 0.35rem 0 0.5rem;
@@ -211,18 +221,20 @@ body {
   cursor: not-allowed;
   pointer-events: none;
 }
-/* optional highlight for picked difficulty */
+
 .difficulty-container .btn.active {
   outline: 2px solid #fff;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
 }
 
-/* hide helper for toggling quiz/results */
+/* Controls panel visibility */
+
 .hide {
   display: none !important;
 }
 
 /* quiz layout */
+
 .quiz-card,
 .results-card {
   max-width: 640px;
@@ -249,19 +261,16 @@ body {
 
 /* results screen spacing */
 #results {
-  padding-top: clamp(6rem, 18vh, 28vh); /* tweak the middle value to taste */
+  padding-top: clamp(6rem, 18vh, 28vh);
 }
 
 /* quiz screen spacing */
 #quiz {
-  padding-top: clamp(
-    4rem,
-    16vh,
-    24vh
-  ); 
+  padding-top: clamp(4rem, 16vh, 24vh);
 }
 
-/* answer states (used only on quiz answer buttons) */
+/* Styling for correct/wrong/disabled answer buttons */
+
 .btn.correct {
   filter: brightness(1.15);
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35) inset;
@@ -308,7 +317,7 @@ body {
     padding: 1.35rem;
     border-radius: 18px;
     margin-inline: auto;
-    min-height: 150px; 
+    min-height: 150px;
   }
   .difficulty-container h3 {
     font-size: 1.25rem;
@@ -429,5 +438,7 @@ body {
 }
 /* allow vertical scrolling on small & medium screens only */
 @media (max-width: 1024px) {
-  body { overflow-y: auto; }
+  body {
+    overflow-y: auto;
+  }
 }
