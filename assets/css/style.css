@@ -272,11 +272,12 @@ body {
 /* Styling for correct/wrong/disabled answer buttons */
 
 .btn.correct {
-  filter: brightness(1.15);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35) inset;
+  background-color: #22c55e !important; 
+  color: #0b2813 !important;
 }
 .btn.wrong {
-  opacity: 0.85;
+  background-color: #ef4444 !important; 
+  color: #fff !important;
 }
 .btn.disabled {
   pointer-events: none;
