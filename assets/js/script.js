@@ -3,6 +3,7 @@ const saveBtn = document.getElementById("save-name");
 const errorLine = document.getElementById("username-error");
 const levelBtns = document.querySelectorAll("[data-level]");
 const heroRef = document.querySelector(".hero");
+const scoreMessageRef = document.getElementById("score-message");
 const highScoresRef = JSON.parse(localStorage.getItem("highScores")) || [];
 
 // Quiz refs
@@ -126,7 +127,7 @@ if (quizRefs.wrongCountEl)   quizRefs.wrongCountEl.textContent   = 0;
 
 function renderQuestion() {
   const total = quizState.list.length;
-  if (quizState.idx >= total) return endQuiz();
+  if (quizState.idx >= total) return gameOver();
 
   const item = quizState.list[quizState.idx];
 
@@ -177,37 +178,49 @@ function handleAnswer(btn, correctText) {
     renderQuestion();
   }, 900);
 }
-// finish quiz: switch to results screen
 
-function endQuiz() {
+// game over 
+
+function gameOver() {
+  // show results, hide quiz (same as your classmate)
   showOrHide([quizRefs.screens.quiz], true);
   showOrHide([quizRefs.screens.results], false);
 
-  // Update and save top-5 high scores
+  displayFinalScore();
+}
 
+function displayFinalScore() {
+  const username = session.username || "Player";
+  const score = quizState.score;
+  const total = quizState.list.length;
+
+  // store top 5 high scores 
   try {
-    const entry = { name: session.username, score: quizState.score };
-    highScoresRef.unshift(entry);
+    highScoresRef.unshift({ name: username, score });
     highScoresRef.sort((a, b) => b.score - a.score);
     highScoresRef.splice(5);
     localStorage.setItem("highScores", JSON.stringify(highScoresRef));
   } catch {}
 
-  // Show final message
+  const msg =
+    score < Math.ceil(total / 2)
+      ? `${username} can do better! Keep trying.`
+      : `Congratulations, ${username}! You've done a great job!`;
 
-  quizRefs.finalLine.textContent = `${session.username}, you scored ${quizState.score} / ${quizState.list.length}.`;
+  if (typeof scoreMessageRef !== "undefined" && scoreMessageRef) {
+    scoreMessageRef.textContent = msg;
+  }
+
+  quizRefs.finalLine.textContent = `${username}, you scored ${score} / ${total}.`;
 }
 
-// Play again -> back to hero
-
+// Play again → full reset 
 if (quizRefs.playAgain) {
   quizRefs.playAgain.addEventListener("click", () => {
-    showOrHide([quizRefs.screens.hero], false);
-    showOrHide([quizRefs.screens.quiz], true);
-    showOrHide([quizRefs.screens.results], true);
-    quizState = { list: [], idx: 0, score: 0, level: null };
+    location.reload();
   });
 }
+
 
 // Error display + simple validators
 
