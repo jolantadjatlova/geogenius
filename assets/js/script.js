@@ -20,8 +20,8 @@ const quizRefs = {
   answers: Array.from(document.querySelectorAll(".answer-btn")),
   finalLine: document.getElementById("final-line"),
   playAgain: document.getElementById("play-again"),
-  correctCountEl: document.getElementById('correct-count'),
-  wrongCountEl:   document.getElementById('wrong-count'),
+  correctCountEl: document.getElementById("correct-count"),
+  wrongCountEl: document.getElementById("wrong-count"),
 };
 
 // In-memory data for the ongoing game
@@ -49,8 +49,8 @@ async function loadQuestions(level) {
     }));
   } catch (e) {
     console.warn("API failed:", e);
-    handleApiError();    
-  throw e;              
+    handleApiError();
+    throw e;
   }
 }
 
@@ -100,9 +100,9 @@ async function startQuiz(level) {
   quizState.idx = 0;
   quizState.score = 0;
   correctCount = 0;
-wrongCount = 0;
-if (quizRefs.correctCountEl) quizRefs.correctCountEl.textContent = 0;
-if (quizRefs.wrongCountEl)   quizRefs.wrongCountEl.textContent   = 0;
+  wrongCount = 0;
+  if (quizRefs.correctCountEl) quizRefs.correctCountEl.textContent = 0;
+  if (quizRefs.wrongCountEl) quizRefs.wrongCountEl.textContent = 0;
 
   // Show quiz; hide start and results
 
@@ -116,11 +116,9 @@ if (quizRefs.wrongCountEl)   quizRefs.wrongCountEl.textContent   = 0;
 
   quizRefs.level.textContent = level.toUpperCase();
   try {
-
-  quizState.list = await loadQuestions(level);
-  renderQuestion();
-  } catch (e) {
-}
+    quizState.list = await loadQuestions(level);
+    renderQuestion();
+  } catch (e) {}
 }
 
 // Display next question and update progress (end if done)
@@ -159,17 +157,18 @@ function handleAnswer(btn, correctText) {
   const isRight = btn.innerHTML === correctText;
 
   if (isRight) {
-  btn.classList.add('correct');
-  quizState.score += 1;
-  correctCount += 1;
-  if (quizRefs.correctCountEl) quizRefs.correctCountEl.textContent = correctCount;
-} else {
-  btn.classList.add('wrong');
-  wrongCount += 1;
-  if (quizRefs.wrongCountEl) quizRefs.wrongCountEl.textContent = wrongCount;
-  const c = quizRefs.answers.find(b => b.innerHTML === correctText);
-  if (c) c.classList.add('correct');
-}
+    btn.classList.add("correct");
+    quizState.score += 1;
+    correctCount += 1;
+    if (quizRefs.correctCountEl)
+      quizRefs.correctCountEl.textContent = correctCount;
+  } else {
+    btn.classList.add("wrong");
+    wrongCount += 1;
+    if (quizRefs.wrongCountEl) quizRefs.wrongCountEl.textContent = wrongCount;
+    const c = quizRefs.answers.find((b) => b.innerHTML === correctText);
+    if (c) c.classList.add("correct");
+  }
 
   // move to next
 
@@ -179,7 +178,7 @@ function handleAnswer(btn, correctText) {
   }, 900);
 }
 
-// game over 
+// game over
 
 function gameOver() {
   // show results, hide quiz (same as your classmate)
@@ -194,7 +193,7 @@ function displayFinalScore() {
   const score = quizState.score;
   const total = quizState.list.length;
 
-  // store top 5 high scores 
+  // store top 5 high scores
   try {
     highScoresRef.unshift({ name: username, score });
     highScoresRef.sort((a, b) => b.score - a.score);
@@ -214,13 +213,12 @@ function displayFinalScore() {
   quizRefs.finalLine.textContent = `${username}, you scored ${score} / ${total}.`;
 }
 
-// Play again → full reset 
+// Play again → full reset
 if (quizRefs.playAgain) {
   quizRefs.playAgain.addEventListener("click", () => {
     location.reload();
   });
 }
-
 
 // Error display + simple validators
 
@@ -299,7 +297,7 @@ levelBtns.forEach((btn) => {
     session.difficulty = level;
 
     // Highlight the chosen difficulty
-    
+
     markActiveDifficulty(btn);
 
     console.log("Starting quiz →", {
