@@ -52,11 +52,43 @@
   </div>
 </li>
     <li class="nav-item d-none d-lg-block px-2 text-white-50">|</li>
-    <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
-  </ul>
+    <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="feedbackMenu"
+             role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Feedback
+          </a>
+
+          <form id="feedbackMenuDropdown"
+                class="dropdown-menu dropdown-menu-end p-3 shadow"
+                action="success.html"
+                method="GET"
+                style="min-width:22rem;max-width:28rem;">
+            <p class="small mb-2">Send us a quick message:</p>
+
+            <div class="mb-2">
+              <label for="fb-name" class="form-label mb-1">Name</label>
+              <input id="fb-name" name="name" class="form-control form-control-sm" required>
+            </div>
+
+            <div class="mb-2">
+              <label for="fb-email" class="form-label mb-1">Email</label>
+              <input id="fb-email" name="email" type="email" class="form-control form-control-sm" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="fb-message" class="form-label mb-1">Message</label>
+              <textarea id="fb-message" name="message" rows="3" class="form-control form-control-sm" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-outline-light btn-sm w-100">Send</button>
+          </form>
+        </li>
+
+      </ul>
     </div>
   </div>
 </nav>
+ 
   <section class="hero">
     <!-- Username + title card -->
   <div class="glass-card username-card">
