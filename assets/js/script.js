@@ -4,6 +4,10 @@ const errorLine = document.getElementById("username-error");
 const levelBtns = document.querySelectorAll("[data-level]");
 const heroRef = document.querySelector(".hero");
 const scoreMessageRef = document.getElementById("score-message");
+const leaderboardBoxRef = document.getElementById("leaderboard-box");
+const leaderboardListRef = document.getElementById("leaderboard-list");
+const leaderboardEmptyRef = document.getElementById("leaderboard-empty");
+const toggleLeaderboardBtn = document.getElementById("toggle-leaderboard");
 const highScoresRef = JSON.parse(localStorage.getItem("highScores")) || [];
 
 // Quiz refs
@@ -23,6 +27,17 @@ const quizRefs = {
   correctCountEl: document.getElementById("correct-count"),
   wrongCountEl: document.getElementById("wrong-count"),
 };
+
+  // // Toggle leaderboard panel
+
+    if (toggleLeaderboardBtn) {
+  toggleLeaderboardBtn.addEventListener("click", () => {
+    leaderboardBoxRef.classList.toggle("hide");
+    if (!leaderboardBoxRef.classList.contains("hide")) {
+      renderLeaderboard();
+    }
+  });
+}
 
 // In-memory data for the ongoing game
 
@@ -199,7 +214,11 @@ function displayFinalScore() {
     highScoresRef.sort((a, b) => b.score - a.score);
     highScoresRef.splice(5);
     localStorage.setItem("highScores", JSON.stringify(highScoresRef));
-  } catch {}
+  } catch {
+
+  }
+  
+  renderLeaderboard();
 
   const msg =
     score < Math.ceil(total / 2)
@@ -211,6 +230,31 @@ function displayFinalScore() {
   }
 
   quizRefs.finalLine.textContent = `${username}, you scored ${score} / ${total}.`;
+}
+  
+function renderLeaderboard() {
+
+
+  let arr;
+  try {
+    arr = JSON.parse(localStorage.getItem("highScores")) || [];
+  } catch {
+    arr = [];
+  }
+
+  // If there are no saved scores, display the empty state and exit
+
+  if (!arr.length) {
+    leaderboardEmptyRef.classList.remove("hide");
+    leaderboardListRef.innerHTML = "";
+    return;
+  }
+  leaderboardEmptyRef.classList.add("hide");
+
+  // Generate list items from saved scores and update DOM
+  leaderboardListRef.innerHTML = arr
+    .map((item, i) => `<li>${i + 1}. ${item.name || "Player"} — ${item.score}</li>`)
+    .join("");
 }
 
 // Play again → full reset
@@ -290,6 +334,7 @@ levelBtns.forEach((btn) => {
       nameInput.focus();
       return;
     }
+   
 
     // Set session state
 

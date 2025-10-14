@@ -96,6 +96,13 @@
     <h2>All done!</h2>
      <p id="score-message"></p>
     <p id="final-line"></p>
+    <div class="leaderboard">
+      <button class="btn" id="toggle-leaderboard" type="button">High Scores</button>
+      <div id="leaderboard-box" class="hide" aria-live="polite">
+        <p id="leaderboard-empty" class="text-muted">No scores yet.</p>
+        <ol id="leaderboard-list" class="mt-2"></ol>
+      </div>
+    </div>
     <button class="btn" id="play-again" type="button">Play again</button>
   </div>
 </section>
