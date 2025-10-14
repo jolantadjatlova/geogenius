@@ -251,11 +251,11 @@ function renderLeaderboard() {
   }
   leaderboardEmptyRef.classList.add("hide");
 
-  // Generate list items from saved scores and update DOM
   leaderboardListRef.innerHTML = arr
-    .map((item, i) => `<li>${i + 1}. ${item.name || "Player"} — ${item.score}</li>`)
-    .join("");
+  .map((item) => `<li>${item.name || "Player"} — ${item.score}</li>`)
+  .join("");
 }
+
 
 // Play again → full reset
 if (quizRefs.playAgain) {
@@ -354,3 +354,4 @@ levelBtns.forEach((btn) => {
 });
 
 updateLevelButtonsState();
+

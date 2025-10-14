@@ -31,7 +31,26 @@
 
     <div class="collapse navbar-collapse" id="mainNav">
        <ul class="navbar-nav ms-auto align-items-lg-center">
-    <li class="nav-item"><a class="nav-link" href="#instructions">Instructions</a></li>
+    <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="instrMenu"
+     role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Instructions
+  </a>
+  <div id="instrMenuDropdown"
+  class="dropdown-menu dropdown-menu-end p-3 shadow" aria-labelledby="instrMenu" style="min-width: 22rem; max-width: 26rem;">
+    <ol class="mb-0 small">
+      <li><strong>Enter your name.</strong></li>
+      <li><strong>Choose a difficulty</strong> (Easy/Medium/Hard).</li>
+      <li><strong>One question at a time</strong> with four answers.</li>
+      <li><strong>Pick one answer</strong> — instant right/wrong feedback.</li>
+      <li><strong>20 seconds</strong> per question; no answer = unanswered.</li>
+      <li><strong>Progress</strong> shown as Qx/Total; next question auto-loads.</li>
+      <li><strong>Finish</strong> to see your score and message.</li>
+      <li>Open <strong>High Scores</strong> for the Top 5.</li>
+      <li>Tap <strong>Play again</strong> to restart.</li>
+    </ol>
+  </div>
+</li>
     <li class="nav-item d-none d-lg-block px-2 text-white-50">|</li>
     <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
   </ul>
