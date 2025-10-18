@@ -151,7 +151,7 @@ body {
   width: 90%;
   padding: 2rem;
   margin-bottom: 40px;
-  margin-top: -3rem;
+  margin-top: -9rem;
 }
 .username-card h1 {
   font-size: 2rem;
@@ -512,22 +512,23 @@ body {
 
 @media (max-width: 360px) {
   .username-card {
-    margin-top: 4rem;
+    margin-top: -5rem;
   }
 
   .difficulty-container {
-    margin-top: -1.25rem;
+    margin-top: -12rem;
   }
 }
 
 @media (min-width: 361px) and (max-width: 400px) {
   .username-card {
-    margin-top: 4rem;
+    margin-top: -3rem;
   }
   .difficulty-container {
-    margin-top: -1.5rem;
+    margin-top: -15rem;
   }
 }
+
 /* allow vertical scrolling on small & medium screens only */
 @media (max-width: 1024px) {
   body {
