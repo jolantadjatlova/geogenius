@@ -133,7 +133,7 @@ Each issue was assigned a priority label using the MoSCoW method (e.g., must-hav
 ## Wireframes
 
 Wireframes were created using [Balsamiq](https://balsamiq.com/) to map out the layout for mobile, tablet and desktop screens.
-
+![Wireframes](docs/geogenius_wireframes.png) 
 
 [Back to contents](#contents)
 
