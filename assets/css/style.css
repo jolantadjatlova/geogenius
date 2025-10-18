@@ -352,6 +352,27 @@ body {
   pointer-events: none;
   opacity: 0.6;
 }
+/* footer */ 
+
+.site-footer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;            
+  padding: 12px 0;
+  background: var(--accent);      
+}
+
+/* Footer icon color */
+
+.site-footer .footer-icon,
+.site-footer .footer-icon:link,
+.site-footer .footer-icon:visited,
+.site-footer .footer-icon i {
+  color: #fff !important;  
+  text-decoration: none;
+}
 
 /* Media queries */
 
