@@ -14,10 +14,15 @@
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome-->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
   <!-- Link to CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body class="page-bg">
+<body class="page-bg d-flex flex-column min-vh-100">
 <!-- Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
   <div class="container justify-content-between">
@@ -88,7 +93,7 @@
     </div>
   </div>
 </nav>
- 
+ <main class="flex-fill">
   <section class="hero">
     <!-- Username + title card -->
   <div class="glass-card username-card">
@@ -128,6 +133,7 @@
     <div class="quiz-bar">
       <span id="quiz-level"></span>
       <span id="quiz-progress"></span>
+       <span id="quiz-timer" aria-live="polite">20s</span> 
     </div>
 
     <h2 id="question"></h2>
@@ -157,12 +163,36 @@
     <button class="btn" id="play-again" type="button">Play again</button>
   </div>
 </section>
-
+</main>
 <!-- Bootstrap JS bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
   <!-- Link to JS (load last so DOM is ready) -->
   <script src="assets/js/script.js"></script>
+
+  <footer class="site-footer">
+  <div class="container d-flex justify-content-center gap-4">
+    <a
+      href="https://github.com/jolantadjatlova"
+      target="_blank"
+      rel="noopener"
+      aria-label="Visit my GitHub (opens in a new tab)"
+      class="footer-icon"
+    >
+      <i class="fa-brands fa-github"></i>
+    </a>
+
+    <a
+      href="https://www.linkedin.com/"
+      target="_blank"
+      rel="noopener"
+      aria-label="Visit LinkedIn (opens in a new tab)"
+      class="footer-icon"
+    >
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
+  </div>
+</footer>
 </body>
 </html>

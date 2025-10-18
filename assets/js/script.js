@@ -26,7 +26,14 @@ const quizRefs = {
   playAgain: document.getElementById("play-again"),
   correctCountEl: document.getElementById("correct-count"),
   wrongCountEl: document.getElementById("wrong-count"),
+  timer: document.getElementById("quiz-timer"),
 };
+
+// Timer state
+const QUESTION_TIME = 20;       
+let timerId = null;
+let timeLeft = QUESTION_TIME;
+
 
   // // Toggle leaderboard panel
 
@@ -108,6 +115,39 @@ function handleApiError() {
   }, 1000);
 }
 
+// Timer
+
+function stopTimer() {
+  if (timerId) {
+    clearInterval(timerId);
+    timerId = null;
+  }
+}
+
+function updateTimerUI() {
+  if (quizRefs.timer) {
+    quizRefs.timer.textContent = `${timeLeft}s`;
+  }
+}
+
+function startTimer() {
+  stopTimer();                  
+  timeLeft = QUESTION_TIME;
+  updateTimerUI();
+
+  timerId = setInterval(() => {
+    timeLeft -= 1;
+    updateTimerUI();
+
+    if (timeLeft <= 0) {
+      stopTimer();
+      handleTimeUp();
+    }
+  }, 1000);
+}
+
+
+
 // Start the game
 
 async function startQuiz(level) {
@@ -159,11 +199,15 @@ function renderQuestion() {
     btn.innerHTML = opts[i];
     btn.onclick = () => handleAnswer(btn, item.correct);
   });
-}
 
+// START TIMER FOR THIS QUESTION  
+
+startTimer();
+}
 // Handle an answer: lock buttons, mark correct/wrong, update score, advance
 
 function handleAnswer(btn, correctText) {
+  stopTimer();
   quizRefs.answers.forEach((b) => {
     b.disabled = true;
     b.classList.add("disabled");
@@ -175,8 +219,7 @@ function handleAnswer(btn, correctText) {
     btn.classList.add("correct");
     quizState.score += 1;
     correctCount += 1;
-    if (quizRefs.correctCountEl)
-      quizRefs.correctCountEl.textContent = correctCount;
+    if (quizRefs.correctCountEl) quizRefs.correctCountEl.textContent = correctCount;
   } else {
     btn.classList.add("wrong");
     wrongCount += 1;
@@ -185,18 +228,41 @@ function handleAnswer(btn, correctText) {
     if (c) c.classList.add("correct");
   }
 
-  // move to next
-
+  // move to next after brief pause
   setTimeout(() => {
     quizState.idx += 1;
     renderQuestion();
   }, 900);
 }
 
+// Highlights the correct answer
+
+function handleTimeUp() {
+  // Disable all buttons
+  quizRefs.answers.forEach((b) => {
+    b.disabled = true;
+    b.classList.add("disabled");
+  });
+
+  // Highlight the correct answer so it’s clear what it was
+
+  const currentItem = quizState.list[quizState.idx];
+  const correctBtn = quizRefs.answers.find(
+    (b) => b.innerHTML === currentItem.correct
+  );
+  if (correctBtn) correctBtn.classList.add("correct");
+
+  // Move on without changing score (unanswered)
+
+  setTimeout(() => {
+    quizState.idx += 1;
+    renderQuestion();
+  }, 900);
+}
 // game over
 
 function gameOver() {
-  // show results, hide quiz (same as your classmate)
+  stopTimer();
   showOrHide([quizRefs.screens.quiz], true);
   showOrHide([quizRefs.screens.results], false);
 
