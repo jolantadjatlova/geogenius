@@ -7,7 +7,7 @@ A fun, interactive geography quiz game where players can test their knowledge by
 
 To view the deployed website click [here](https://jolantadjatlova.github.io/geogenius/).
 
-![screenshot](responsive display) 
+![screenshot](docs/geogenius_responsive_display.png) 
 
 ### Contents
 
