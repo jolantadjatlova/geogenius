@@ -36,6 +36,14 @@ body {
 .custom-navbar .navbar-nav {
   margin-left: auto;
 }
+#instrMenuDropdown {
+  margin-top: 11px;
+}
+
+#feedbackMenuDropdown {
+  margin-top: 11px;
+   margin-right: 16px;
+}
 
 /* hero */
 .hero {
