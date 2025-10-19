@@ -45,19 +45,18 @@ body {
   display: grid;
   place-items: center;
   text-align: center;
-  background:  linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("../images/hero.png") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("../images/hero.png") center/cover no-repeat;
   position: relative;
   padding-top: clamp(6rem, 14vh, 10rem);
   padding-bottom: clamp(2rem, 8vh, 5rem);
 }
-
 .hero h1,
 .hero p {
   position: relative;
   z-index: 1;
   color: #fff;
 }
-
 .page-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
     url("../images/hero.png") center / cover no-repeat fixed;
@@ -71,9 +70,9 @@ body {
   background-color: var(--accent) !important;
   color: #fff;
 
-  border: 1px solid rgba(0,0,0,.15) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
   border-radius: 22px !important;
-  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
 #instrMenuDropdown ol {
@@ -84,7 +83,6 @@ body {
   line-height: 1.35;
   color: #fff;
 }
-
 
 /* Success Html */
 
@@ -184,9 +182,6 @@ body {
 .difficulty-container .glass-card {
   width: 200px;
   padding: 1.5rem;
-}
-
-.difficulty-container .glass-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -209,13 +204,6 @@ body {
 .difficulty-container .glass-card > * {
   position: relative;
   z-index: 1;
-}
-.difficulty-container .glass-card p .line{
-  display:block;
-  white-space:nowrap;   
-  text-align:center;
-  line-height:1.25;
-  margin:0;            
 }
 
 /* colored overlays */
@@ -319,11 +307,13 @@ body {
 }
 
 /* results screen spacing */
+
 #results {
   padding-top: clamp(6rem, 18vh, 28vh);
 }
 
 /* quiz screen spacing */
+
 #quiz {
   padding-top: clamp(4rem, 16vh, 24vh);
 }
@@ -342,16 +332,17 @@ body {
   pointer-events: none;
   opacity: 0.6;
 }
-/* footer */ 
 
-.site-footer{
+/* footer */
+
+.site-footer {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 10;            
+  z-index: 10;
   padding: 12px 0;
-  background: var(--accent);      
+  background: var(--accent);
 }
 
 /* Footer icon color */
@@ -360,7 +351,7 @@ body {
 .site-footer .footer-icon:link,
 .site-footer .footer-icon:visited,
 .site-footer .footer-icon i {
-  color: #fff !important;  
+  color: #fff !important;
   text-decoration: none;
 }
 
@@ -370,7 +361,7 @@ body {
   .difficulty-container {
     gap: 16px;
     padding-inline: 8px;
-    margin-top: 1.5rem; 
+    margin-top: 1.5rem;
   }
   .difficulty-container .glass-card {
     width: 170px;
@@ -382,7 +373,7 @@ body {
   }
   .difficulty-container p {
     font-size: 0.95rem;
-    max-width: 12ch;                          
+    max-width: 12ch;
     margin: 0.25rem auto 1rem;
     line-height: 1.25;
     text-align: center;
@@ -393,24 +384,44 @@ body {
   }
 }
 @media (max-width: 576px) {
- 
   #feedbackMenuDropdown,
   #instrMenuDropdown {
     position: absolute !important;
     left: 50% !important;
     right: auto !important;
     transform: translateX(-50%) !important;
-     --bs-dropdown-bg: var(--accent);
-    background-color: var(--accent) !important; 
-    border-color: rgba(0,0,0,.15) !important;   
-    box-shadow: 0 10px 24px rgba(0,0,0,.28);    
+    --bs-dropdown-bg: var(--accent);
+    background-color: var(--accent) !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
     color: #fff;
-    
   }
-   .difficulty-container { 
-    margin-top: 2.5rem; 
+  .difficulty-container {
+    margin-top: 2.5rem;
   }
 }
+
+@media (min-width: 376px) and (max-width: 480px) {
+  .difficulty-container .glass-card {
+    width: clamp(260px, 88vw, 320px);
+    min-height: 160px;
+    padding-block: 1.2rem;
+    padding-inline: 1rem;
+    border-radius: 20px;
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 361px) and (max-width: 400px) {
+  .difficulty-container {
+    padding-inline: 10px;
+  }
+  .difficulty-container .glass-card {
+    width: min(90vw, 285px);
+    margin-inline: auto;
+  }
+}
+
 @media (max-width: 375px) {
   .difficulty-container {
     gap: 20px;
@@ -434,50 +445,6 @@ body {
     font-size: 0.95rem;
   }
 }
-
-@media (min-width: 376px) and (max-width: 480px) {
-  .difficulty-container .glass-card {
-    width: clamp(260px, 88vw, 320px);
-    min-height: 160px;
-    padding-block: 1.2rem;
-    padding-inline: 1rem;
-    border-radius: 20px;
-    margin-inline: auto;
-  }
-}
-
-@media (min-width: 360px) and (max-width: 400px) {
-  .difficulty-container {
-    padding-inline: 10px;
-  }
-  .difficulty-container .glass-card {
-    width: min(90vw, 285px);
-    margin-inline: auto;
-  }
-}
-
-@media (max-width: 360px) {
-  .username-card,
-  .glass-card.username-card {
-    width: min(86vw, 250px);
-    max-width: none;
-    padding: 1rem 1.1rem 1.2rem;
-    border-radius: 18px;
-    margin-inline: auto;
-    margin-bottom: 20px;
-  }
-  .username-card h1 {
-    font-size: 1.55rem;
-  }
-  .username-card p {
-    font-size: 1rem;
-  }
-  .username-card input,
-  .username-card .btn {
-    width: 100%;
-  }
-}
-
 @media (min-width: 361px) and (max-width: 400px) {
   .username-card,
   .glass-card.username-card {
@@ -521,12 +488,32 @@ body {
     width: 100%;
   }
 }
+@media (max-width: 360px) {
+  .username-card,
+  .glass-card.username-card {
+    width: min(86vw, 250px);
+    max-width: none;
+    padding: 1rem 1.1rem 1.2rem;
+    border-radius: 18px;
+    margin-inline: auto;
+    margin-bottom: 20px;
+  }
+  .username-card h1 {
+    font-size: 1.55rem;
+  }
+  .username-card p {
+    font-size: 1rem;
+  }
+  .username-card input,
+  .username-card .btn {
+    width: 100%;
+  }
+}
 
 @media (max-width: 360px) {
   .username-card {
     margin-top: -1rem;
   }
-
 }
 
 @media (min-width: 361px) and (max-width: 400px) {
@@ -539,5 +526,22 @@ body {
 @media (max-width: 1024px) {
   body {
     overflow-y: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+  .difficulty-container {
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero {
+    padding-top: 3.5rem;
+    padding-bottom: 7rem;
   }
 }
