@@ -354,8 +354,25 @@ body {
   color: #fff !important;
   text-decoration: none;
 }
-
+/* Footer icon layout */
+.site-footer .container {
+  display: flex;                /* ensure flex even if classes change */
+  justify-content: center;      /* keep them centered on phones */
+  align-items: center;
+  gap: 1.25rem;                 /* small gap on mobile */
+  width: 100%;
+}
 /* Media queries */
+
+@media (min-width: 768px){
+  .site-footer .container{
+    justify-content: flex-end !important;
+    max-width: none;
+     width: 100%;
+    gap: 1.25rem;
+    padding-right: max(16px, 2vw, env(safe-area-inset-right));
+  }
+}
 
 @media (max-width: 820px) {
   .difficulty-container {
