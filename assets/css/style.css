@@ -41,20 +41,16 @@ body {
 }
 /* hero */
 .hero {
-  min-height: 100vh;
+  min-height: 100svh;
   display: grid;
   place-items: center;
   text-align: center;
-  background: url("../images/hero.png") center/cover no-repeat;
+  background:  linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("../images/hero.png") center/cover no-repeat;
   position: relative;
+  padding-top: clamp(6rem, 14vh, 10rem);
+  padding-bottom: clamp(2rem, 8vh, 5rem);
 }
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 0;
-}
+
 .hero h1,
 .hero p {
   position: relative;
@@ -137,7 +133,7 @@ body {
   width: 90%;
   padding: 2rem;
   margin-bottom: 40px;
-  margin-top: -9rem;
+  margin-top: 0;
 }
 .username-card h1 {
   font-size: 2rem;
@@ -183,7 +179,7 @@ body {
   gap: 20px;
   z-index: 1;
   position: relative;
-  margin-top: -8cm;
+  margin-top: 0;
 }
 .difficulty-container .glass-card {
   width: 200px;
@@ -374,6 +370,7 @@ body {
   .difficulty-container {
     gap: 16px;
     padding-inline: 8px;
+    margin-top: 1.5rem; 
   }
   .difficulty-container .glass-card {
     width: 170px;
@@ -385,7 +382,7 @@ body {
   }
   .difficulty-container p {
     font-size: 0.95rem;
-    max-width: 12ch;                          /* forces ~2 lines */
+    max-width: 12ch;                          
     margin: 0.25rem auto 1rem;
     line-height: 1.25;
     text-align: center;
@@ -408,6 +405,10 @@ body {
     border-color: rgba(0,0,0,.15) !important;   
     box-shadow: 0 10px 24px rgba(0,0,0,.28);    
     color: #fff;
+    
+  }
+   .difficulty-container { 
+    margin-top: 2.5rem; 
   }
 }
 @media (max-width: 375px) {
@@ -526,17 +527,11 @@ body {
     margin-top: -1rem;
   }
 
-  .difficulty-container {
-    margin-top: -3rem;
-  }
 }
 
 @media (min-width: 361px) and (max-width: 400px) {
   .username-card {
     margin-top: -3rem;
-  }
-  .difficulty-container {
-    margin-top: -15rem;
   }
 }
 
