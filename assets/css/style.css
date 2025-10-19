@@ -214,6 +214,13 @@ body {
   position: relative;
   z-index: 1;
 }
+.difficulty-container .glass-card p .line{
+  display:block;
+  white-space:nowrap;   
+  text-align:center;
+  line-height:1.25;
+  margin:0;            
+}
 
 /* colored overlays */
 
@@ -378,6 +385,10 @@ body {
   }
   .difficulty-container p {
     font-size: 0.95rem;
+    max-width: 12ch;                          /* forces ~2 lines */
+    margin: 0.25rem auto 1rem;
+    line-height: 1.25;
+    text-align: center;
   }
   .difficulty-container .btn {
     padding: 8px 14px;
