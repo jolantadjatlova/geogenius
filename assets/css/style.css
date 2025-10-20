@@ -93,6 +93,8 @@ body {
   place-items: center;
   text-align: center;
   padding: 2rem;
+  padding-bottom: 8rem;
+
 }
 .success-card {
   max-width: 520px;
