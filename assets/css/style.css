@@ -371,6 +371,10 @@ body {
   color: #fff !important;
   text-decoration: none;
 }
+
+.site-footer .footer-icon:hover i { 
+color: var(--easy) !important;
+ }
 /* Footer icon layout */
 .site-footer .container {
   display: flex;                
