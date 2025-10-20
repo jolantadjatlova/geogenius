@@ -314,6 +314,16 @@ margin-bottom: 0.75rem;
   padding: 1.5rem;
 }
 
+#leaderboard-list {
+  list-style-position: inside;  
+  padding-left: 0;              
+  margin: .5rem 0 0;
+}
+#leaderboard-list li {
+  white-space: nowrap;         
+  line-height: 1.6;
+}
+
 .quiz-bar {
   display: flex;
   justify-content: space-between;
