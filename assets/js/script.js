@@ -425,5 +425,12 @@ levelBtns.forEach((btn) => {
   });
 });
 
+// Clear saved username when going Home
+document.querySelectorAll('a[href="index.html"]').forEach(a => {
+  a.addEventListener('click', () => {
+    localStorage.removeItem('gg_username');
+  });
+});
+
 updateLevelButtonsState();
 
