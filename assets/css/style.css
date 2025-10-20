@@ -272,6 +272,14 @@ body {
 .difficulty-container .btn:hover {
   filter: brightness(0.9);
 }
+/* play again and high scores buttons*/
+
+#play-again { 
+margin-top: 0.75rem; 
+}
+#toggle-leaderboard { 
+margin-bottom: 0.75rem; 
+}
 
 /* Form errors, disabled buttons, and active level state */
 
