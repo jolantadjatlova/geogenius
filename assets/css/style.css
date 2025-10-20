@@ -1,5 +1,18 @@
 /* global styles */
 
+/* Typography */
+
+body, h1, h2, h3, .btn {
+  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+}
+
+h1 { font-weight: 700; }
+h2, h3, .btn { font-weight: 600; }
+
 html,
 body {
   height: 100%;
@@ -17,6 +30,7 @@ body {
 /* theme */
 
 :root {
+  --bs-body-font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --easy: #4fc3f7;
   --medium: #ffb74d;
   --hard: #e57373;
@@ -164,7 +178,7 @@ body {
   border-radius: 12px;
   color: #fff;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
   transition: background 0.3s ease;
 }
 .btn:hover {
