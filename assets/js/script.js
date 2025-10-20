@@ -382,11 +382,17 @@ if (saveBtn) {
       return;
     }
     session.username = nameInput.value.trim();
+    localStorage.setItem("gg_username", session.username);
     setError("Saved ✓");
     updateLevelButtonsState();
   });
 }
-
+const savedName = localStorage.getItem("gg_username");
+if (savedName) {
+  nameInput.value = savedName;
+  setError("");              
+  updateLevelButtonsState(); 
+}
 // Start handlers
 
 levelBtns.forEach((btn) => {
