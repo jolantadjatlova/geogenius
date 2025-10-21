@@ -1,201 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>GeoGenius</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeoGenius</title>
 
-  <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-<link rel="manifest" href="assets/favicon/site.webmanifest">
-<link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
 
-<!-- Preconnects for Google Fonts -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preconnects for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Font Awesome-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
-<!--Google font-->
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Link to CSS -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-<body class="page-bg d-flex flex-column min-vh-100">
-<!-- Navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
-  <div class="container-fluid px-0">
-    <a class="navbar-brand ps-3" href="index.html">GeoGenius</a>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!--Google font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="page-bg d-flex flex-column min-vh-100">
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+      <div class="container-fluid px-0">
+        <a class="navbar-brand ps-3" href="index.html">GeoGenius</a>
 
-    <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse" data-bs-target="#mainNav"
-            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="mainNav">
-       <ul class="navbar-nav ms-auto align-items-lg-center">
-    <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="instrMenu"
-     role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Instructions
-  </a>
-  <div id="instrMenuDropdown"
-  class="dropdown-menu dropdown-menu-end p-3 shadow" aria-labelledby="instrMenu" style="min-width: 22rem; max-width: 26rem;">
-    <ol class="mb-0 small">
-      <li><strong>Enter your name.</strong></li>
-      <li><strong>Choose a difficulty</strong> (Easy/Medium/Hard).</li>
-      <li><strong>One question at a time</strong> with four answers.</li>
-      <li><strong>Pick one answer</strong> — instant right/wrong feedback.</li>
-      <li><strong>20 seconds</strong> per question; no answer = unanswered.</li>
-      <li><strong>Progress</strong> shown as Qx/Total; next question auto-loads.</li>
-      <li><strong>Finish</strong> to see your score and message.</li>
-      <li>Open <strong>High Scores</strong> for the Top 5.</li>
-      <li>Tap <strong>Play again</strong> to restart.</li>
-    </ol>
-  </div>
-</li>
-    <li class="nav-item d-none d-lg-block px-2 text-white-50">|</li>
-    <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="feedbackMenu"
-             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Feedback
-          </a>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="instrMenu"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Instructions
+              </a>
+              <div
+                id="instrMenuDropdown"
+                class="dropdown-menu dropdown-menu-end p-3 shadow"
+                aria-labelledby="instrMenu"
+                style="min-width: 22rem; max-width: 26rem"
+              >
+                <ol class="mb-0 small">
+                  <li><strong>Enter your name.</strong></li>
+                  <li>
+                    <strong>Choose a difficulty</strong> (Easy/Medium/Hard).
+                  </li>
+                  <li>
+                    <strong>One question at a time</strong> with four answers.
+                  </li>
+                  <li>
+                    <strong>Pick one answer</strong> — instant right/wrong
+                    feedback.
+                  </li>
+                  <li>
+                    <strong>20 seconds</strong> per question; no answer =
+                    unanswered.
+                  </li>
+                  <li>
+                    <strong>Progress</strong> shown as Qx/Total; next question
+                    auto-loads.
+                  </li>
+                  <li>
+                    <strong>Finish</strong> to see your score and message.
+                  </li>
+                  <li>Open <strong>High Scores</strong> for the Top 5.</li>
+                  <li>Tap <strong>Play again</strong> to restart.</li>
+                </ol>
+              </div>
+            </li>
+            <li class="nav-item d-none d-lg-block px-2 text-white-50">|</li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="feedbackMenu"
+                role="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="false"
+                aria-expanded="false"
+              >
+                Feedback
+              </a>
 
-          <form id="feedbackMenuDropdown"
+              <form
+                id="feedbackMenuDropdown"
                 class="dropdown-menu dropdown-menu-end p-3 shadow"
                 action="success.html"
-                method="GET">
-            <p class="small mb-2">Send us a quick message:</p>
+                method="GET"
+              >
+                <p class="small mb-2">Send us a quick message:</p>
 
-            <div class="mb-2">
-              <label for="fb-name" class="form-label mb-1">Name</label>
-              <input id="fb-name" name="name" class="form-control form-control-sm" required>
-            </div>
+                <div class="mb-2">
+                  <label for="fb-name" class="form-label mb-1">Name</label>
+                  <input
+                    id="fb-name"
+                    name="name"
+                    class="form-control form-control-sm"
+                    required
+                  />
+                </div>
 
-            <div class="mb-2">
-              <label for="fb-email" class="form-label mb-1">Email</label>
-              <input id="fb-email" name="email" type="email" class="form-control form-control-sm" required>
-            </div>
+                <div class="mb-2">
+                  <label for="fb-email" class="form-label mb-1">Email</label>
+                  <input
+                    id="fb-email"
+                    name="email"
+                    type="email"
+                    class="form-control form-control-sm"
+                    required
+                  />
+                </div>
 
-            <div class="mb-3">
-              <label for="fb-message" class="form-label mb-1">Message</label>
-              <textarea id="fb-message" name="message" rows="3" class="form-control form-control-sm" required></textarea>
-            </div>
+                <div class="mb-3">
+                  <label for="fb-message" class="form-label mb-1"
+                    >Message</label
+                  >
+                  <textarea
+                    id="fb-message"
+                    name="message"
+                    rows="3"
+                    class="form-control form-control-sm"
+                    required
+                  ></textarea>
+                </div>
 
-            <button type="submit" class="btn btn-outline-light btn-sm w-100">Send</button>
-          </form>
-        </li>
-
-      </ul>
-    </div>
-  </div>
-</nav>
- <main class="flex-fill">
-  <section class="hero">
-    <!-- Username + title card -->
-  <div class="glass-card username-card">
-    <h1>GeoGenius Quiz</h1>
-    <p>Enter your username to begin the quiz.</p>
-     <label for="username" class="visually-hidden">Username</label>
-    <input id="username" type="text" placeholder="E.g. Alex" required />
-     <p id="username-error" class="form-error" aria-live="polite"></p>
-    <button class="btn" id="save-name" type="button">Save</button>
-  </div>
-
-  <!-- Difficulty cards -->
-  <div class="difficulty-container">
-    <div class="glass-card easy">
-      <h3>Easy</h3>
-      <p><span class="line">Basic questions</span><span class="line">for beginners</span></p>
-      <button class="btn" type="button" data-level="easy">Start</button>
-    </div>
-
-    <div class="glass-card medium">
-      <h3>Medium</h3>
-      <p><span class="line">Intermediate</span><span class="line">challenge</span></p>
-       <button class="btn" type="button" data-level="medium">Start</button>
-    </div>
-
-    <div class="glass-card hard">
-      <h3>Hard</h3>
-      <p><span class="line">Difficult questions</span><span class="line">for experts</span></p>
-      <button class="btn" type="button" data-level="hard">Start</button>
-    </div>
-  </div>
-</section>
-
-<!-- QUIZ SCREEN (hidden by default) -->
-<section id="quiz" class="hide">
-  <div class="glass-card quiz-card">
-    <div class="quiz-bar">
-      <span id="quiz-level"></span>
-      <span id="quiz-progress"></span>
-       <span id="quiz-timer" aria-live="polite">20s</span> 
-    </div>
-
-    <h2 id="question"></h2>
-
-    <div class="answers">
-      <button class="btn answer-btn" data-index="0"></button>
-      <button class="btn answer-btn" data-index="1"></button>
-      <button class="btn answer-btn" data-index="2"></button>
-      <button class="btn answer-btn" data-index="3"></button>
-    </div>
-  </div>
-</section>
-
-<!-- RESULTS SCREEN (hidden by default) -->
-<section id="results" class="hide">
-  <div class="glass-card results-card">
-    <h2>All done!</h2>
-     <p id="score-message"></p>
-    <p id="final-line"></p>
-    <div class="leaderboard">
-      <button class="btn" id="toggle-leaderboard" type="button">High Scores</button>
-      <div id="leaderboard-box" class="hide" aria-live="polite">
-        <p id="leaderboard-empty" class="text-muted">No scores yet.</p>
-        <ol id="leaderboard-list" class="mt-2"></ol>
+                <button
+                  type="submit"
+                  class="btn btn-outline-light btn-sm w-100"
+                >
+                  Send
+                </button>
+              </form>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <button class="btn" id="play-again" type="button">Play again</button>
-  </div>
-</section>
-</main>
-<!-- Bootstrap JS bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </nav>
+    <main class="flex-fill">
+      <section class="hero">
+        <!-- Username + title card -->
+        <div class="glass-card username-card">
+          <h1>GeoGenius Quiz</h1>
+          <p>Enter your username to begin the quiz.</p>
+          <label for="username" class="visually-hidden">Username</label>
+          <input id="username" type="text" placeholder="E.g. Alex" required />
+          <p id="username-error" class="form-error" aria-live="polite"></p>
+          <button class="btn" id="save-name" type="button">Save</button>
+        </div>
 
+        <!-- Difficulty cards -->
+        <div class="difficulty-container">
+          <div class="glass-card easy">
+            <h3>Easy</h3>
+            <p>
+              <span class="line">Basic questions</span
+              ><span class="line">for beginners</span>
+            </p>
+            <button class="btn" type="button" data-level="easy">Start</button>
+          </div>
 
-  <!-- Link to JS (load last so DOM is ready) -->
-  <script src="assets/js/script.js"></script>
+          <div class="glass-card medium">
+            <h3>Medium</h3>
+            <p>
+              <span class="line">Intermediate</span
+              ><span class="line">challenge</span>
+            </p>
+            <button class="btn" type="button" data-level="medium">Start</button>
+          </div>
 
-  <footer class="site-footer">
-  <div class="container d-flex justify-content-center gap-4">
-    <a
-      href="https://github.com/jolantadjatlova"
-      target="_blank"
-      rel="noopener"
-      aria-label="Visit my GitHub (opens in a new tab)"
-      class="footer-icon"
-    >
-      <i class="fa-brands fa-github fa-lg"></i>
-    </a>
+          <div class="glass-card hard">
+            <h3>Hard</h3>
+            <p>
+              <span class="line">Difficult questions</span
+              ><span class="line">for experts</span>
+            </p>
+            <button class="btn" type="button" data-level="hard">Start</button>
+          </div>
+        </div>
+      </section>
 
-    <a
-      href="https://www.linkedin.com/"
-      target="_blank"
-      rel="noopener"
-      aria-label="Visit LinkedIn (opens in a new tab)"
-      class="footer-icon"
-    >
-      <i class="fa-brands fa-linkedin fa-lg"></i>
-    </a>
-  </div>
-</footer>
-</body>
+      <!-- QUIZ SCREEN-->
+      <section id="quiz" class="hide">
+        <div class="glass-card quiz-card">
+          <div class="quiz-bar">
+            <span id="quiz-level"></span>
+            <span id="quiz-progress"></span>
+            <span id="quiz-timer" aria-live="polite">20s</span>
+          </div>
+
+          <h2 id="question"></h2>
+
+          <div class="answers">
+            <button class="btn answer-btn" data-index="0"></button>
+            <button class="btn answer-btn" data-index="1"></button>
+            <button class="btn answer-btn" data-index="2"></button>
+            <button class="btn answer-btn" data-index="3"></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTS SCREEN -->
+      <section id="results" class="hide">
+        <div class="glass-card results-card">
+          <h2>All done!</h2>
+          <p id="score-message"></p>
+          <p id="final-line"></p>
+          <div class="leaderboard">
+            <button class="btn" id="toggle-leaderboard" type="button">
+              High Scores
+            </button>
+            <div id="leaderboard-box" class="hide" aria-live="polite">
+              <p id="leaderboard-empty" class="text-muted">No scores yet.</p>
+              <ol id="leaderboard-list" class="mt-2"></ol>
+            </div>
+          </div>
+          <button class="btn" id="play-again" type="button">Play again</button>
+        </div>
+      </section>
+    </main>
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer class="site-footer">
+      <div class="container d-flex justify-content-center gap-4">
+        <a
+          href="https://github.com/jolantadjatlova"
+          target="_blank"
+          rel="noopener"
+          aria-label="Visit my GitHub (opens in a new tab)"
+          class="footer-icon"
+        >
+          <i class="fa-brands fa-github fa-lg"></i>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Visit LinkedIn (opens in a new tab)"
+          class="footer-icon"
+        >
+          <i class="fa-brands fa-linkedin fa-lg"></i>
+        </a>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

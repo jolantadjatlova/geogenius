@@ -30,14 +30,13 @@ const quizRefs = {
 };
 
 // Timer state
-const QUESTION_TIME = 20;       
+const QUESTION_TIME = 20;
 let timerId = null;
 let timeLeft = QUESTION_TIME;
 
+// // Toggle leaderboard panel
 
-  // // Toggle leaderboard panel
-
-    if (toggleLeaderboardBtn) {
+if (toggleLeaderboardBtn) {
   toggleLeaderboardBtn.addEventListener("click", () => {
     leaderboardBoxRef.classList.toggle("hide");
     if (!leaderboardBoxRef.classList.contains("hide")) {
@@ -104,9 +103,9 @@ function showOrHide(elements, showElement) {
 // API error handler
 
 function handleApiError() {
-  // Hide the quiz screen if we showed it
+  
   showOrHide([quizRefs.screens.quiz], true);
-  // Return user to the hero/start screen
+
   showOrHide([quizRefs.screens.hero], false);
 
   alert("Error fetching data. Please try again later.");
@@ -131,7 +130,7 @@ function updateTimerUI() {
 }
 
 function startTimer() {
-  stopTimer();                  
+  stopTimer();
   timeLeft = QUESTION_TIME;
   updateTimerUI();
 
@@ -145,8 +144,6 @@ function startTimer() {
     }
   }, 1000);
 }
-
-
 
 // Start the game
 
@@ -200,9 +197,9 @@ function renderQuestion() {
     btn.onclick = () => handleAnswer(btn, item.correct);
   });
 
-// START TIMER FOR THIS QUESTION  
+  // START TIMER FOR THIS QUESTION
 
-startTimer();
+  startTimer();
 }
 // Handle an answer: lock buttons, mark correct/wrong, update score, advance
 
@@ -219,7 +216,8 @@ function handleAnswer(btn, correctText) {
     btn.classList.add("correct");
     quizState.score += 1;
     correctCount += 1;
-    if (quizRefs.correctCountEl) quizRefs.correctCountEl.textContent = correctCount;
+    if (quizRefs.correctCountEl)
+      quizRefs.correctCountEl.textContent = correctCount;
   } else {
     btn.classList.add("wrong");
     wrongCount += 1;
@@ -238,7 +236,7 @@ function handleAnswer(btn, correctText) {
 // Highlights the correct answer
 
 function handleTimeUp() {
-  // Disable all buttons
+  
   quizRefs.answers.forEach((b) => {
     b.disabled = true;
     b.classList.add("disabled");
@@ -280,10 +278,8 @@ function displayFinalScore() {
     highScoresRef.sort((a, b) => b.score - a.score);
     highScoresRef.splice(5);
     localStorage.setItem("highScores", JSON.stringify(highScoresRef));
-  } catch {
+  } catch {}
 
-  }
-  
   renderLeaderboard();
 
   const msg =
@@ -297,10 +293,8 @@ function displayFinalScore() {
 
   quizRefs.finalLine.textContent = `${username}, you scored ${score} / ${total}.`;
 }
-  
+
 function renderLeaderboard() {
-
-
   let arr;
   try {
     arr = JSON.parse(localStorage.getItem("highScores")) || [];
@@ -318,10 +312,9 @@ function renderLeaderboard() {
   leaderboardEmptyRef.classList.add("hide");
 
   leaderboardListRef.innerHTML = arr
-  .map((item) => `<li>${item.name || "Player"} — ${item.score}</li>`)
-  .join("");
+    .map((item) => `<li>${item.name || "Player"} — ${item.score}</li>`)
+    .join("");
 }
-
 
 // Play again → full reset
 if (quizRefs.playAgain) {
@@ -372,7 +365,7 @@ if (nameInput) {
   });
 }
 
-// Save button: validate and store name (in memory)
+// Save button: validate and store name 
 
 if (saveBtn) {
   saveBtn.addEventListener("click", () => {
@@ -390,8 +383,8 @@ if (saveBtn) {
 const savedName = localStorage.getItem("gg_username");
 if (savedName) {
   nameInput.value = savedName;
-  setError("");              
-  updateLevelButtonsState(); 
+  setError("");
+  updateLevelButtonsState();
 }
 // Start handlers
 
@@ -406,7 +399,6 @@ levelBtns.forEach((btn) => {
       nameInput.focus();
       return;
     }
-   
 
     // Set session state
 
@@ -426,11 +418,10 @@ levelBtns.forEach((btn) => {
 });
 
 // Clear saved username when going Home
-document.querySelectorAll('a[href="index.html"]').forEach(a => {
-  a.addEventListener('click', () => {
-    localStorage.removeItem('gg_username');
+document.querySelectorAll('a[href="index.html"]').forEach((a) => {
+  a.addEventListener("click", () => {
+    localStorage.removeItem("gg_username");
   });
 });
 
 updateLevelButtonsState();
-
