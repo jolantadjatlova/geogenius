@@ -65,16 +65,46 @@ To view the deployed website click [here](https://jolantadjatlova.github.io/geog
   - [Visual Content](#visual-content)
 - [Final Tidy-Up](#final-tidy-up)
 
-# UX
+## UX
 
 
-## Website Intentions
+### The 5 Planes of UX
 
-**For the User:**
+#### 1. Strategy
 
+**Purpose**
 
-**For the Site Developer:**
+Provide an educational yet entertaining quiz for users to test and expand their geography knowledge.
 
+Deliver quick, replayable gameplay suitable for short study breaks or casual learning.
+
+Encourage engagement through instant feedback, multiple difficulty levels, and score tracking.
+
+Offer a polished, accessible interface that makes learning feel rewarding and fun.
+
+**Primary User Needs**
+
+- Quickly understand how to play without needing lengthy instructions.
+
+- Easily choose a difficulty level (Easy, Medium, Hard).
+
+- Receive clear visual feedback for correct and incorrect answers.
+
+- Track progress and performance (score, high scores, results).
+
+- Access the quiz seamlessly on mobile, tablet, or desktop.
+
+- Use a simple feedback form to share opinions or report issues.
+
+**Business/Project Goals**
+
+-Showcase a fully functional JavaScript project demonstrating skills in DOM manipulation, conditionals, arrays, timers, and local storage.
+
+-Implement UX best practices including accessibility (aria attributes, keyboard navigation, responsive design).
+
+-Apply Bootstrap for consistency and efficient responsive layout.
+
+-Create a visually engaging, interactive quiz that could serve educational or recreational purposes.
 ## User Goals
 
 ## User Stories
