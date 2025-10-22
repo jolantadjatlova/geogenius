@@ -3,7 +3,7 @@
 /* Typography */
 
 body, h1, h2, h3, .btn {
-  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Outfit", system-ui, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 button, input, textarea, select {
@@ -425,7 +425,7 @@ color: var(--easy) !important;
     max-width: none;
      width: 100%;
     gap: 1.25rem;
-    padding-right: max(16px, 2vw, env(safe-area-inset-right));
+    padding-right: 16px;
   }
 }
 
