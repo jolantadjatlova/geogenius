@@ -408,11 +408,7 @@ levelBtns.forEach((btn) => {
     // Highlight the chosen difficulty
 
     markActiveDifficulty(btn);
-
-    console.log("Starting quiz →", {
-      user: session.username,
-      level: session.difficulty,
-    });
+    
     startQuiz(level);
   });
 });
