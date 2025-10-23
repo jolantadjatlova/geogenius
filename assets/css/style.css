@@ -1,17 +1,28 @@
 /* global styles */
 
-/* Typography */
-
-body, h1, h2, h3, .btn {
+body,
+h1,
+h2,
+h3,
+.btn {
   font-family: "Outfit", system-ui, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font-family: inherit;
 }
 
-h1 { font-weight: 700; }
-h2, h3, .btn { font-weight: 600; }
+h1 {
+  font-weight: 700;
+}
+h2,
+h3,
+.btn {
+  font-weight: 600;
+}
 
 html,
 body {
@@ -30,13 +41,14 @@ body {
 /* theme */
 
 :root {
-  --bs-body-font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --bs-body-font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto,
+    Arial, sans-serif;
   --easy: #4fc3f7;
   --medium: #ffb74d;
   --hard: #e57373;
   --accent: #00838f;
   --bg: #f2f2f2;
-  --card-blue: #3386A5; 
+  --card-blue: #3386a5;
 }
 
 /* navbar */
@@ -55,13 +67,14 @@ body {
   min-width: 300px;
 }
 /* hero */
+
 .hero {
   min-height: 100svh;
   display: grid;
   place-items: center;
   text-align: center;
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("../images/hero.png") center/cover no-repeat;
+    url("../images/hero.webp") center/cover no-repeat;
   position: relative;
   padding-top: clamp(6rem, 14vh, 10rem);
   padding-bottom: clamp(2rem, 8vh, 5rem);
@@ -72,9 +85,10 @@ body {
   z-index: 1;
   color: #fff;
 }
+
 .page-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("../images/hero.png") center / cover no-repeat fixed;
+    url("../images/hero.webp") center / cover no-repeat;
 }
 
 /* dropdown menus*/
@@ -108,7 +122,6 @@ body {
   text-align: center;
   padding: 2rem;
   padding-bottom: 8rem;
-
 }
 .success-card {
   max-width: 520px;
@@ -136,7 +149,7 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.45);
   transition: transform 0.25s ease, box-shadow 0.25s ease,
     border-color 0.25s ease;
-    color: #0f172a;
+  color: #0f172a;
 }
 .glass-card::after {
   content: none;
@@ -154,12 +167,12 @@ body {
 .username-card h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-   color: #0f172a;
+  color: #0f172a;
 }
 .username-card p {
-font-size: 1.1rem;
-margin-bottom: 1.2rem;
-color: #000;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: #000;
 }
 .username-card input {
   width: 80%;
@@ -187,8 +200,8 @@ color: #000;
 .btn:hover {
   background: rgba(255, 255, 255, 0.4);
 }
-#save-name { 
-  background: var(--accent); 
+#save-name {
+  background: var(--accent);
 }
 /* difficulty cards */
 
@@ -230,19 +243,19 @@ color: #000;
 .difficulty-container .glass-card p {
   display: flex;
   flex-direction: column;
-  align-items: center;      
+  align-items: center;
   justify-content: center;
-  gap: .1rem;
-  margin: .5rem 0 1rem;
+  gap: 0.1rem;
+  margin: 0.5rem 0 1rem;
   line-height: 1.25;
   text-align: center;
-  min-height: calc(2 * 1.25em);  
+  min-height: calc(2 * 1.25em);
   font-size: 0.9rem;
   color: #1f2937;
 }
 .difficulty-container .glass-card p .line {
-  display: block;          
-  white-space: nowrap;     
+  display: block;
+  white-space: nowrap;
 }
 
 /* colored overlays */
@@ -296,11 +309,11 @@ color: #000;
 }
 /* play again and high scores buttons*/
 
-#play-again { 
-margin-top: 0.75rem; 
+#play-again {
+  margin-top: 0.75rem;
 }
-#toggle-leaderboard { 
-margin-bottom: 0.75rem; 
+#toggle-leaderboard {
+  margin-bottom: 0.75rem;
 }
 
 /* Form errors, disabled buttons, and active level state */
@@ -337,12 +350,12 @@ margin-bottom: 0.75rem;
 }
 
 #leaderboard-list {
-  list-style-position: inside;  
-  padding-left: 0;              
-  margin: .5rem 0 0;
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 0.5rem 0 0;
 }
 #leaderboard-list li {
-  white-space: nowrap;         
+  white-space: nowrap;
   line-height: 1.6;
 }
 
@@ -412,18 +425,19 @@ margin-bottom: 0.75rem;
   text-decoration: none;
 }
 
-.site-footer .footer-icon:hover i { 
-color: var(--easy) !important;
- }
+.site-footer .footer-icon:hover i {
+  color: var(--easy) !important;
+}
 /* Footer icon layout */
 .site-footer .container {
-  display: flex;                
-  justify-content: center;      
-  gap: 1.25rem;                
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
   width: 100%;
 }
 
-/* Force solid white for navbar links (Bootstrap uses rgba white) */
+/* Override Bootstrap’s rgba navbar links */
+
 .custom-navbar .navbar-nav .nav-link,
 .custom-navbar .navbar-nav .nav-link:visited {
   color: #fff !important;
@@ -432,16 +446,16 @@ color: var(--easy) !important;
 .custom-navbar .navbar-nav .nav-link:hover,
 .custom-navbar .navbar-nav .nav-link:focus {
   color: #fff !important;
-  text-decoration: underline;      /* optional but good for a11y */
+  text-decoration: underline; 
   text-underline-offset: 2px;
 }
 /* Media queries */
 
-@media (min-width: 768px){
-  .site-footer .container{
+@media (min-width: 768px) {
+  .site-footer .container {
     justify-content: flex-end !important;
     max-width: none;
-     width: 100%;
+    width: 100%;
     gap: 1.25rem;
     padding-right: 16px;
   }
@@ -462,8 +476,8 @@ color: var(--easy) !important;
     font-size: 1.15rem;
   }
   .difficulty-container .glass-card p {
-  font-size: 0.95rem;
-  margin: 0.25rem auto 1rem;
+    font-size: 0.95rem;
+    margin: 0.25rem auto 1rem;
   }
   .difficulty-container .btn {
     padding: 8px 14px;
@@ -554,13 +568,13 @@ color: var(--easy) !important;
   }
 
   .username-card .btn {
-  background: var(--accent);
-  color: #f2f2f2;
-}
+    background: var(--accent);
+    color: #f2f2f2;
+  }
 
-.username-card .btn:hover {
-  filter: brightness(0.9);
-}
+  .username-card .btn:hover {
+    filter: brightness(0.9);
+  }
 }
 
 @media (min-width: 401px) and (max-width: 440px) {

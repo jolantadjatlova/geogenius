@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>GeoGenius</title>
 
-    <meta name="description" content="GeoGenius is a fast, fun geography quiz. Choose Easy, Medium, or Hard, beat the 20-second timer, track high scores, and test your world knowledge.">
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/hero.webp"
+      fetchpriority="high"
+    >
+
+    <meta
+      name="description"
+      content="GeoGenius is a fast, fun geography quiz. Choose Easy, Medium, or Hard, beat the 20-second timer, track high scores, and test your world knowledge."
+    >
 
     <!-- Favicon -->
     <link
@@ -27,12 +37,12 @@
       href="assets/favicon/favicon-16x16.png"
     >
 
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
-    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <link rel="manifest" href="assets/favicon/site.webmanifest" >
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" >
 
     <!-- Preconnects for Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
 
     <!-- Bootstrap CSS -->
     <link
@@ -42,9 +52,16 @@
 
     <!-- Font Awesome-->
     <link
-      rel="stylesheet"
+      rel="preload"
+      as="style"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      onload="this.onload=null;this.rel='stylesheet'"
     >
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    ></noscript>
     <!--Google font-->
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap"
@@ -193,7 +210,7 @@
           <h1>GeoGenius Quiz</h1>
           <p>Enter your username to begin the quiz.</p>
           <label for="username" class="visually-hidden">Username</label>
-          <input id="username" type="text" placeholder="E.g. Alex" required>
+          <input id="username" type="text" placeholder="E.g. Alex" required >
           <p id="username-error" class="form-error" aria-live="polite"></p>
           <button class="btn" id="save-name" type="button">Save</button>
         </div>
