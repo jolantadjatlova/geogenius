@@ -406,7 +406,28 @@ Both scripts passed validation successfully.
 ## Form Validation Testing
 
 
-## Lighthouse Testing 
+### Lighthouse Testing 
+
+GeoGenius was tested using **Chrome DevTools Lighthouse** to evaluate overall site quality across multiple key areas.  
+This tool inspects and scores the website for the following criteria:
+
+- **Performance** – measures how fast the website loads and responds.  
+- **Accessibility** – evaluates how well users, including those using assistive technologies, can navigate the site.  
+- **Best Practices** – checks if the site follows modern web development standards.  
+- **SEO** – tests how well the site follows search engine optimization guidelines to ensure discoverability.
+
+---
+
+**Test for Mobile:** 
+
+![Lighthouse Mobile Test](docs/lighthouse-mobile-test-gg.png)
+
+**Test for Desktop:**  
+
+![Lighthouse Desktop Test](docs/lighthouse-desktop-test-gg.png)
+
+
+
 
 
 Test for Mobile: 
