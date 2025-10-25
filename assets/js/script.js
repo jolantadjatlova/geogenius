@@ -56,7 +56,7 @@ const session = {
 // API loader
 
 async function loadQuestions(level) {
-  const amount = 3;
+  const amount = 10;
   const url = `https://opentdb.com/api.php?amount=${amount}&category=22&difficulty=${level}&type=multiple`;
   try {
     const res = await fetch(url);
@@ -291,7 +291,7 @@ function displayFinalScore() {
     score < Math.ceil(total / 2) ?
     `${username} can do better! Keep trying.` :
     `Congratulations, ${username}! You've done a great job!`;
-    
+
   if (typeof scoreMessageRef !== "undefined" && scoreMessageRef) {
     scoreMessageRef.textContent = msg;
   }

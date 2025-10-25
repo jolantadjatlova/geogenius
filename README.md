@@ -237,8 +237,7 @@ A contrast grid was used to ensure that text and interactive elements meet acces
 
 - As a user, I want to enter my username before starting, so my score feels personal.  
 - As a user, I want to choose **Easy**, **Medium**, or **Hard** so the questions suit my ability.  
-- As a user, I want to find **clear instructions** or send **feedback** easily.  
-- As a user, I want questions loaded from a **live API** so every quiz feels fresh.  
+- As a user, I want to find **clear instructions** or send **feedback** easily.    
 - As a user, I want to see my **final score** when the quiz ends.  
 - As a user, I want the game to show a **leaderboard** of the top scores, so I can see how my score compares to others.  
 - As a user, I want to see **how far through the quiz** I am.  
