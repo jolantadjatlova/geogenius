@@ -81,14 +81,6 @@ let quizState = { list: [], idx: 0, score: 0, level: null };
 let correctCount = 0;
 let wrongCount = 0;
 
-function show(element) {
-  if (element) element.classList.remove("hide");
-}
-
-function hide(element) {
-  if (element) element.classList.add("hide");
-}
-
 // Panel visibility controls
 
 function showOrHide(elements, showElement) {
@@ -103,7 +95,6 @@ function showOrHide(elements, showElement) {
 // API error handler
 
 function handleApiError() {
-  
   showOrHide([quizRefs.screens.quiz], true);
 
   showOrHide([quizRefs.screens.hero], false);
@@ -236,7 +227,6 @@ function handleAnswer(btn, correctText) {
 // Highlights the correct answer
 
 function handleTimeUp() {
-  
   quizRefs.answers.forEach((b) => {
     b.disabled = true;
     b.classList.add("disabled");
@@ -283,9 +273,8 @@ function displayFinalScore() {
   renderLeaderboard();
 
   const msg =
-    score < Math.ceil(total / 2)
-      ? `${username} can do better! Keep trying.`
-      : `Congratulations, ${username}! You've done a great job!`;
+    score < Math.ceil(total / 2) ? `${username} can do better! Keep trying.` :
+  `Congratulations, ${username}! You've done a great job!`;
 
   if (typeof scoreMessageRef !== "undefined" && scoreMessageRef) {
     scoreMessageRef.textContent = msg;
@@ -365,7 +354,7 @@ if (nameInput) {
   });
 }
 
-// Save button: validate and store name 
+// Save button: validate and store name
 
 if (saveBtn) {
   saveBtn.addEventListener("click", () => {
@@ -408,7 +397,7 @@ levelBtns.forEach((btn) => {
     // Highlight the chosen difficulty
 
     markActiveDifficulty(btn);
-    
+
     startQuiz(level);
   });
 });

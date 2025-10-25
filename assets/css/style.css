@@ -244,7 +244,7 @@ main {
   margin-top: auto;
 }
 
-.difficulty-container h3 {
+.difficulty-container h2 {
   margin-bottom: 0.5rem;
   font-size: 1.3rem;
 }
@@ -308,7 +308,7 @@ main {
 
 /* Text colours for difficulty cards */
 
-.difficulty-container .glass-card h3 {
+.difficulty-container .glass-card h2 {
   color: #0f172a;
 }
 .difficulty-container .glass-card p {
@@ -506,7 +506,7 @@ main {
     padding: 1.25rem;
     border-radius: 18px;
   }
-  .difficulty-container h3 { font-size: 1.15rem; }
+  .difficulty-container h2 { font-size: 1.15rem; }
   .difficulty-container .glass-card p {
     font-size: 0.95rem;
     margin: 0.25rem auto 1rem;
