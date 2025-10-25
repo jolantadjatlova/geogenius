@@ -380,6 +380,11 @@ All pages returned **no errors or warnings**, confirming that the HTML is valid 
 
 ### CSS
 
+The stylesheet was tested using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/).  
+The result showed **no errors**, confirming that the CSS file follows current web standards.
+
+![CSS Validation](docs/css-gg-validation.png)
+
 
 ## User Story Testing
 
