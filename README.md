@@ -225,6 +225,14 @@ A contrast grid was used to ensure that text and interactive elements meet acces
 
 ## User Goals
 
+- User-friendly navigation and layout.  
+- Non-distracting, visually clear background.  
+- Opportunity to provide quick feedback via a simple form.  
+- Clear instructions written in plain English.  
+- Relevant and varied geography questions.  
+- Fair and transparent scoring system.  
+- Ability to easily replay the quiz or change difficulty levels.  
+
 ## User Stories
 
 [Back to contents](#contents)
@@ -271,31 +279,7 @@ Each issue was assigned a priority label using the MoSCoW method (e.g., must-hav
 
 ---
 [Back to contents](#contents)
-
-## Architecture & Design
-
-
-[Back to contents](#contents)
-
----
-[Back to contents](#contents)
-
-## Design Choices
-
-### Typography
-
-
-### Colour Scheme
-The colour scheme was generated using [Coolors](https://coolors.co/ "Coolors").
-
-![Color Palette](docs/geogenius-colour-palette.png) 
-
-### Contrast Grid
-Using Contrast Grid helped identify which colour pairings work best for the website in terms of readability and visual appeal, as well as which ones to avoid to maintain accessibility standards.
-
-![Contrast Grid](docs/geogenius-contrast-grid.png)
-
-                                      
+                                   
 ### Images
 
 
