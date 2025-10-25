@@ -324,6 +324,8 @@ It depicts a bright blue sky with global landmarks such as the Eiffel Tower, Big
 
 The playful illustration style with planes, birds, and hot-air balloons adds an educational yet fun atmosphere, while keeping the focus on the quiz interface.  
 The image was intentionally designed to be light and non-distracting, ensuring readability of the text and buttons.
+
+
 ---
 ### Responsiveness
 
@@ -384,6 +386,18 @@ The stylesheet was tested using the [W3C CSS Validation Service](https://jigsaw.
 The result showed **no errors**, confirming that the CSS file follows current web standards.
 
 ![CSS Validation](docs/css-gg-validation.png)
+
+### JavaScript
+
+JavaScript files were tested using the [JSHint](https://jshint.com/) validation tool to ensure code quality and compliance with ECMAScript 11 standards.
+
+Both scripts passed validation successfully.  
+
+- **Main Script (`script.js`):**  
+  ![Script JS Validation](docs/script.js.png)
+
+- **Redirect Script (`redirect.js`):**  
+  ![Redirect JS Validation](docs/redirect.js.png)
 
 
 ## User Story Testing
