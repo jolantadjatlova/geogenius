@@ -426,6 +426,18 @@ Both scripts passed validation successfully.
 ## User Story Testing
 
 
+| User Story                                                                               | Result                                                                    | Pass | Screenshot                                                |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ---- | --------------------------------------------------------- |
+| As a user, I want to enter my username before starting, so my score feels personal.      | User can input their name before starting, and it appears in the results. | Yes  | [Username Input](docs/user-story1.png "Username Input")   |
+| As a user, I want to choose Easy, Medium, or Hard so the questions suit my ability.      | User can select one of three difficulty levels before the quiz begins.    | Yes  | [Level Selection](docs/user-story2.png "Level Selection") |
+| As a user, I want to see how far through the quiz I am.                                  | Progress indicator updates after each question.                           | Yes  | [Progress Indicator](docs/user-story4.png "Progress Indicator") |
+| As a user, I want to click an answer and know if I was right or wrong immediately.       | Buttons turn green/red instantly after selection.                         | Yes  | [Answer Feedback](docs/user-story5.png "Answer Feedback") |
+| As a user, I want to see my final score when the quiz ends.                              | End screen shows total score and result message.                          | Yes  | [Results Screen](docs/user-story6.png "Results Screen")   |
+| As a user, I want the game to show a leaderboard of the top scores, so I can compare.    | Leaderboard displays top five saved scores via local storage.             | Yes  | [Leaderboard View](docs/user-story7.png "Leaderboard View") |
+| As a user, I want to find clear instructions or send feedback.                           | Navbar provides links to instructions and feedback form.                   | Yes  | [Feedback Form](docs/user-story8.png "Feedback Form")     |
+| As a user, I want the quiz to work smoothly on any device.                               | Fully responsive design confirmed through device testing.                 | Yes  | [Responsive View](docs/user-story9.png "Responsive View") |
+
+
 ## Form Validation Testing
 
 
