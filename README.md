@@ -249,39 +249,56 @@ A contrast grid was used to ensure that text and interactive elements meet acces
 
 ## Agile Development Process
 
+The **GeoGenius** quiz was developed using an **iterative Agile approach**, focusing on building a clear, user-friendly **Minimum Viable Product (MVP)**.  
+The workflow was managed through **GitHub Projects** (Kanban board) and **GitHub Issues**, where each user story was assigned a priority using the **MoSCoW** method.  
 
+This ensured that the most essential functionality—such as dynamic question loading, scoring, and responsive design—was developed first, followed by enhancements like the leaderboard and feedback form.
 
-### Project Requirements & Scope
-
-**Requirements:**
-
-**Scope:**
+The scope and requirements of the project are detailed in the [5 Planes of UX](#the-5-planes-of-ux) section.
 
 ### Planning Tools & Workflow
 
+To stay organised and follow an iterative Agile process, I used the following tools throughout the development of **GeoGenius**:
 
+---
 
 #### GitHub Projects (Kanban)
-A Kanban board was set up in [GitHub Projects](https://github.com/users/jolantadjatlova/projects/8) to manage all tasks visually. Tasks were broken into user stories and categorised by status:  
+
+A **Kanban board** was set up in [GitHub Projects](https://github.com/users/jolantadjatlova/projects/8) to manage all tasks visually.  
+Tasks were broken down into **user stories** and categorised by status:  
 **To Do → In Progress → Done**
 
 This helped me:
-- Track progress easily
-- Stay focused on achievable goals
-- Maintain momentum without feeling overwhelmed
 
-![GitHub Project](doc/github-project.png)
+- Track progress easily  
+- Stay focused on achievable goals  
+- Maintain momentum without feeling overwhelmed  
+
+![GitHub Projects Board](docs/github-gg-project.png)
+
+---
 
 #### GitHub Issues
+
 [GitHub Issues](https://github.com/jolantadjatlova/geogenius/issues) were used to:
 
-- Document user stories and tasks
-- Break down larger goals into manageable steps
-- Track development progress for key features
+- Document **user stories** and **tasks**  
+- Break down larger goals into manageable steps  
+- Track development progress for key features  
 
-Each issue was assigned a priority label using the MoSCoW method (e.g., must-have, should-have) to help focus on what was most essential for the MVP.
+Each issue was assigned a **priority label** using the **MoSCoW method**  
+(e.g., *must-have*, *should-have*, *could-have*)  
+to help focus on what was most essential for the MVP.
 
-![GitHub Issues](will be added  screenshoot)
+![GitHub Issues](docs/github-gg-issues.png)
+
+---
+
+[Back to contents](#contents)
+
+
+
+
 
 ---
 
