@@ -362,6 +362,21 @@ To view detailed responsiveness results, see the [Responsiveness Test](#responsi
 ## Code Validation
 
 ### HTML
+I used the [W3C HTML Validation Service](https://validator.w3.org/) to check all HTML files in the project.  
+All pages returned **no errors or warnings**, confirming that the HTML is valid and well-structured.
+
+- **Main Page (index.html):**  
+
+  ![Index HTML Validation](docs/index.html-gg-validation.png)
+
+- **Success Page (success.html):**  
+
+  ![Success HTML Validation](docs/success.html-gg-validation.png)
+
+- **404 Page (404.html):**  
+
+  ![404 HTML Validation](docs/404.html-gg-validation.png)
+
 
 ### CSS
 
