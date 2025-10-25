@@ -26,13 +26,7 @@ To view the deployed website click [here](https://jolantadjatlova.github.io/geog
     - [GitHub Issues](#github-issues)
     - [MoSCoW Prioritization](#moscow-prioritization)
 - [Architecture & Design](#architecture--design)
-  - [Hero](#hero)
-  - [About Us](#about-us)
-  - [Hikes](#hikes)
-  - [Checklist](#checklist)
-  - [Meeting Points](#meeting-points)
-  - [Pricing](#pricing)
-  - [Contact / Success Page](#contact--success-page)
+
 - [Wireframes](#wireframes)
 - [Design Choices](#design-choices)
   - [Typography](#typography)
@@ -74,13 +68,13 @@ To view the deployed website click [here](https://jolantadjatlova.github.io/geog
 
 **Purpose**
 
-Provide an educational yet entertaining quiz for users to test and expand their geography knowledge.
+- Provide an educational yet entertaining quiz for users to test and expand their geography knowledge.
 
-Deliver quick, replayable gameplay suitable for short study breaks or casual learning.
+- Deliver quick, replayable gameplay suitable for short study breaks or casual learning.
 
-Encourage engagement through instant feedback, multiple difficulty levels, and score tracking.
+- Encourage engagement through instant feedback, multiple difficulty levels, and score tracking.
 
-Offer a polished, accessible interface that makes learning feel rewarding and fun.
+- Offer a polished, accessible interface that makes learning feel rewarding and fun.
 
 **Primary User Needs**
 
@@ -98,13 +92,137 @@ Offer a polished, accessible interface that makes learning feel rewarding and fu
 
 **Business/Project Goals**
 
--Showcase a fully functional JavaScript project demonstrating skills in DOM manipulation, conditionals, arrays, timers, and local storage.
+- Showcase a fully functional JavaScript project demonstrating skills in DOM manipulation, conditionals, arrays, timers, and local storage.
 
--Implement UX best practices including accessibility (aria attributes, keyboard navigation, responsive design).
+- Implement UX best practices including accessibility (aria attributes, keyboard navigation, responsive design).
 
--Apply Bootstrap for consistency and efficient responsive layout.
+- Apply Bootstrap for consistency and efficient responsive layout.
 
--Create a visually engaging, interactive quiz that could serve educational or recreational purposes.
+- Create a visually engaging, interactive quiz that could serve educational or recreational purposes.
+
+#### 2. Scope
+
+**Functional Requirements**
+
+- User can enter a username and save it for the session (stored in localStorage).
+
+- User can select from three difficulty levels: Easy, Medium, Hard.
+
+- The quiz fetches questions dynamically from the Open Trivia Database API.
+
+- Each question presents four possible answers (one correct).
+
+- The timer counts down from 20 seconds per question.
+
+- Visual feedback (correct/wrong color) is given instantly after each answer.
+
+- Final score and personalized message are displayed on completion.
+
+- A leaderboard stores the top five high scores locally.
+
+- “Play Again” resets the quiz for a new attempt.
+
+- Feedback form and instructions are accessible via the navigation bar.
+
+**Content Requirements**
+
+- Quiz title, username input, and difficulty descriptions.
+
+- Questions and answers from API data.
+
+- User feedback messages (“Congratulations!” / “Keep trying!”).
+
+- Accessible text labels, aria roles, and color-coded states.
+
+- Iconography for visual reinforcement (✔️ / ❌ / ⏱️).
+
+#### 3. Structure
+
+**Interaction Design**
+
+- The user journey follows a simple linear flow:  
+  1. Enter username  
+  2. Select difficulty  
+  3. Answer timed questions  
+  4. View results and leaderboard  
+  5. Play again if desired  
+- Each step provides instant visual feedback.  
+- Questions automatically advance for a smooth, continuous experience.  
+
+**Information Architecture**
+
+- Distinct sections for each stage: *Hero (Start)*, *Quiz*, and *Results*.  
+- The navigation bar gives consistent access to *Instructions* and *Feedback*.  
+- Layout built using Bootstrap’s grid and flex utilities.  
+- Quiz data and scores are stored in memory and persisted in `localStorage`.  
+
+**Navigation Layout**
+
+- A fixed Bootstrap navbar provides quick access to:  
+  - **Instructions** (how to play)  
+  - **Feedback Form** (user input)  
+  - **Home** (GeoGenius title link)  
+- The navbar collapses into a mobile-friendly burger menu on smaller screens.  
+
+**User Flow**
+
+1. User lands on the homepage and sees the GeoGenius title and username input.  
+2. User saves their name and selects a difficulty level (Easy, Medium, Hard).  
+3. The quiz begins with timed multiple-choice questions.  
+4. After each answer, visual feedback appears (green/red highlights).  
+5. After all questions, the results screen shows the score and leaderboard.  
+6. User can submit feedback or start a new quiz. 
+
+#### 4. Skeleton
+
+**Wireframes** 
+
+Wireframes were created using [Balsamiq](https://balsamiq.com/) to map out the layout for mobile, tablet and desktop screens.
+![Wireframes](docs/geogenius_wireframes.png)
+
+#### 5. Surface
+
+**Visual Design**
+
+- Color palette inspired by geography and learning — cool blues with bright accent tones.  
+- Glassmorphism cards add modern depth and focus.  
+- Font Awesome icons enhance clarity without visual clutter.  
+- Smooth animations (spinner, transitions) improve engagement.  
+- Consistent typography using the **Outfit** font for a clean and readable look.  
+
+**Typography**
+
+- The **Outfit** typeface is used throughout the interface for a modern and approachable appearance.  
+- Chosen for its clarity and rounded geometry, it ensures text remains legible across all screen sizes.  
+- Font weights (400, 600, 700) establish visual hierarchy between headings, buttons, and body text.  
+- The consistent type styling complements the educational and friendly tone of the quiz.
+
+**Colour Scheme**
+
+The colour palette was designed using [Coolors](https://coolors.co/), inspired by the quiz’s hero images and the educational theme.  
+It combines soft blues and neutrals to create a calm, focused environment for users.  
+
+![GeoGenius Colour Palette](docs/geogenius-colour-palette.png)
+
+**Contrast Grid**
+
+A contrast grid was used to ensure that text and interactive elements meet accessibility guidelines for contrast and readability across all device types.  
+
+![GeoGenius Contrast Grid](docs/geogenius-contrast-grid.png)
+
+**Responsiveness**
+
+- The layout was designed for desktop and tablet first, then adjusted for smaller screens using max-width media queries.
+
+- Ensures all content remains clear, accessible, and visually balanced across all device sizes. 
+
+**Accessibility**
+
+- High colour contrast for legibility.  
+- `aria-live` and `role="status"` attributes ensure updates are announced to assistive technology.  
+- Fully keyboard navigable with visible focus states.  
+- Clear error messaging and validation for username input.  
+
 ## User Goals
 
 ## User Stories
@@ -160,11 +278,6 @@ Each issue was assigned a priority label using the MoSCoW method (e.g., must-hav
 [Back to contents](#contents)
 
 ---
-## Wireframes
-
-Wireframes were created using [Balsamiq](https://balsamiq.com/) to map out the layout for mobile, tablet and desktop screens.
-![Wireframes](docs/geogenius_wireframes.png) 
-
 [Back to contents](#contents)
 
 ## Design Choices
