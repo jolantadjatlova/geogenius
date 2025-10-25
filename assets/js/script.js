@@ -9,6 +9,7 @@ const leaderboardListRef = document.getElementById("leaderboard-list");
 const leaderboardEmptyRef = document.getElementById("leaderboard-empty");
 const toggleLeaderboardBtn = document.getElementById("toggle-leaderboard");
 const highScoresRef = JSON.parse(localStorage.getItem("highScores")) || [];
+const loadingRef = document.getElementById("loading");
 
 // Quiz refs
 
@@ -104,7 +105,15 @@ function handleApiError() {
     location.reload();
   }, 1000);
 }
-
+function setLoading(on) {
+  if (!loadingRef) return;
+  loadingRef.classList.toggle("hide", !on);
+  // disable answer buttons while loading
+  quizRefs.answers.forEach((b) => {
+    b.disabled = on;
+    b.classList.toggle("disabled", on);
+  });
+}
 // Timer
 
 function stopTimer() {
@@ -158,15 +167,21 @@ async function startQuiz(level) {
   // Start of quiz setup
 
   quizRefs.level.textContent = level.toUpperCase();
+
+  setLoading(true);
   try {
     quizState.list = await loadQuestions(level);
     renderQuestion();
-  } catch (e) {}
+  } catch (e) {
+  } finally {
+    setLoading(false);
+  }
 }
 
 // Display next question and update progress (end if done)
 
 function renderQuestion() {
+  if (loadingRef) loadingRef.classList.add("hide");
   const total = quizState.list.length;
   if (quizState.idx >= total) return gameOver();
 
@@ -273,8 +288,9 @@ function displayFinalScore() {
   renderLeaderboard();
 
   const msg =
-    score < Math.ceil(total / 2) ? `${username} can do better! Keep trying.` :
-  `Congratulations, ${username}! You've done a great job!`;
+    score < Math.ceil(total / 2)
+      ? `${username} can do better! Keep trying.`
+      : `Congratulations, ${username}! You've done a great job!`;
 
   if (typeof scoreMessageRef !== "undefined" && scoreMessageRef) {
     scoreMessageRef.textContent = msg;
