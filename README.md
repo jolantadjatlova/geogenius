@@ -351,7 +351,30 @@ To view detailed responsiveness results, see the [Responsiveness Test](#responsi
 
 [Back to contents](#contents)
 
-# Technologies Used
+## Technologies Used
+
+| Technology | Purpose | Type |
+|-------------|----------|------|
+| [Git](https://git-scm.com/) | Track changes and manage code history. | Tool |
+| [GitHub](https://github.com/) | Store and share the project repository. | Tool |
+| [VS Code](https://code.visualstudio.com/) | Writing and organizing all project files. | Tool |
+| [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) | Build the structure and layout of the website. | Language |
+| [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) | Design and style visual elements for the user interface. | Language |
+| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | Add interactivity, logic, and quiz functionality (timers, feedback, scoring, API integration). | Language |
+| [Bootstrap](https://getbootstrap.com/) | Assist with layout structure and responsive grid system. | Library |
+| [Am I Responsive](https://ui.dev/amiresponsive) | Preview how the website looks on multiple device screens. | Tool |
+| [Balsamiq](https://balsamiq.com/) | Create wireframes for mobile, tablet, and desktop layouts. | Tool |
+| [Coolors](https://coolors.co/) | Generate the project’s colour palette. | Tool |
+| [Eight Shapes Contrast Grid](https://contrast-grid.eightshapes.com/) | Test color contrast and accessibility combinations. | Tool |
+| [Pixlr](https://pixlr.com/) | Resize and optimize images for web performance. | Tool |
+| [Favicon.io](https://favicon.io/) | Generate custom favicon for the website. | Tool |
+| [Google Fonts](https://fonts.google.com/) | Import and apply the **Outfit** font for readability. | Library |
+| [Font Awesome](https://fontawesome.com/) | Add visual icons and enhance user experience. | Library |
+| [ChatGPT](https://chat.openai.com/) | Assisted in writing content and refining code structure. | AI |
+| [Markdown Table Generator](https://www.tablesgenerator.com/markdown_tables) | Helped generate and format markdown tables. | Tool |
+| [W3C HTML Validation Service](https://validator.w3.org/) | Validate HTML syntax and structure. | Tool |
+| [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) | Validate CSS syntax and detect errors. | Tool |
+| [JSHint](https://jshint.com/) | Validate JavaScript syntax and code quality. | Tool |
    
 
 [Back to contents](#contents)
@@ -425,16 +448,6 @@ This tool inspects and scores the website for the following criteria:
 **Test for Desktop:**  
 
 ![Lighthouse Desktop Test](docs/lighthouse-desktop-test-gg.png)
-
-
-
-
-
-Test for Mobile: 
-
-
-
-Test for Desktop:
 
 
 ## Browser Testing
