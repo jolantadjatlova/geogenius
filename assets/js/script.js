@@ -288,10 +288,10 @@ function displayFinalScore() {
   renderLeaderboard();
 
   const msg =
-    score < Math.ceil(total / 2)
-      ? `${username} can do better! Keep trying.`
-      : `Congratulations, ${username}! You've done a great job!`;
-
+    score < Math.ceil(total / 2) ?
+    `${username} can do better! Keep trying.` :
+    `Congratulations, ${username}! You've done a great job!`;
+    
   if (typeof scoreMessageRef !== "undefined" && scoreMessageRef) {
     scoreMessageRef.textContent = msg;
   }
