@@ -300,18 +300,41 @@ to help focus on what was most essential for the MVP.
 
 
 
+
 ---
 
 ### MoSCoW Prioritization
+To prioritize tasks effectively, I applied the **MoSCoW method**:
+
+| **Priority** | **Description** |
+|---------------|-----------------|
+| **Must Have** | Core quiz functionality including username input, difficulty selection, API question fetch, timer, and scoring system. These features are essential for the quiz to function correctly. |
+| **Should Have** | Features that enhance the user experience such as the high score leaderboard (localStorage), responsive design adjustments, and clear feedback/instructions. |
+| **Could Have** | Nice-to-have additions like sound effects, improved loading animations, or expanded quiz categories if time allows. |
+
+This ensured a **focused, realistic development process** that stayed aligned with the project’s goals and user needs.
 
 ---
 [Back to contents](#contents)
                                    
 ### Images
 
+The background image for GeoGenius were generated using **ChatGPT**.  
+It depicts a bright blue sky with global landmarks such as the Eiffel Tower, Big Ben, the Statue of Liberty, and Christ the Redeemer — reflecting the quiz’s geographical theme. 
 
-### Responsiveness 
+The playful illustration style with planes, birds, and hot-air balloons adds an educational yet fun atmosphere, while keeping the focus on the quiz interface.  
+The image was intentionally designed to be light and non-distracting, ensuring readability of the text and buttons.
+---
+### Responsiveness
 
+The GeoGenius website adapts seamlessly to different screen sizes using custom CSS media queries.  
+The layout, typography, and interactive elements dynamically adjust to ensure usability and visual balance across **mobile**, **tablet**, and **desktop** devices.  
+
+- All buttons, inputs, and quiz cards remain accessible and easy to tap on smaller screens.  
+- Text and visual components maintain clarity without overflow or layout shift.  
+- Navigation collapses into a hamburger menu for smaller devices, improving accessibility and focus.  
+
+To view detailed responsiveness results, see the [Responsiveness Test](#responsiveness-test).
 
 [Back to contents](#contents)
 
