@@ -51,17 +51,15 @@ body {
   --bg: #f2f2f2;
   --card-blue: #3386a5;
 
-  /* Navbar and footer sizes used in layout height calculations */
-
   --nav-h: 56px;
   --foot-h: 52px;
 }
-/* Main section expands to occupy space between the navbar and footer */
+
 main {
   height: 100%;
   overflow: clip;
 }
-/* Hero section fills the main area by default */
+
 .hero {
   min-height: 100%;
 }
@@ -225,6 +223,18 @@ main {
 .btn:hover {
  filter: brightness(0.9);
 }
+
+.answers .answer-btn {
+  background: var(--accent);
+  color: #fff;
+}
+
+.answers .answer-btn:hover,
+.answers .answer-btn:focus {
+  background: var(--accent); 
+  filter: none;           
+}
+
 .answers .btn { 
   color: #ffffff; }
 
