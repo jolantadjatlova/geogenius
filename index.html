@@ -218,7 +218,13 @@
           <h1>GeoGenius Quiz</h1>
           <p>Enter your username to begin the quiz.</p>
           <label for="username" class="visually-hidden">Username</label>
-          <input id="username" type="text" placeholder="E.g. Alex" required >
+          <input
+            id="username"
+            type="text"
+            placeholder="E.g. Alex"
+            required
+            minlength="2"
+          >
           <p id="username-error" class="form-error" aria-live="polite"></p>
           <button class="btn" id="save-name" type="button">Save</button>
         </div>
@@ -270,7 +276,7 @@
 
           <div id="loading" class="hide" role="status" aria-live="polite">
             <div class="spinner" aria-hidden="true"></div>
-             <span>Loading questions…</span>
+            <span>Loading questions…</span>
           </div>
 
           <h2 id="question">GeoGenius Quiz</h2>

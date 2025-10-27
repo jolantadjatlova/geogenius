@@ -35,7 +35,7 @@ const QUESTION_TIME = 20;
 let timerId = null;
 let timeLeft = QUESTION_TIME;
 
-// // Toggle leaderboard panel
+//  Toggle leaderboard panel
 
 if (toggleLeaderboardBtn) {
   toggleLeaderboardBtn.addEventListener("click", () => {
@@ -76,13 +76,13 @@ async function loadQuestions(level) {
   }
 }
 
-// quiz functions
+// quiz state and counters
 
 let quizState = { list: [], idx: 0, score: 0, level: null };
 let correctCount = 0;
 let wrongCount = 0;
 
-// Panel visibility controls
+// Show/Hide helper — pass true to hide 
 
 function showOrHide(elements, showElement) {
   elements.forEach((element) => {
@@ -105,10 +105,11 @@ function handleApiError() {
     location.reload();
   }, 1000);
 }
+// Show/hide loading spinner
+
 function setLoading(on) {
   if (!loadingRef) return;
   loadingRef.classList.toggle("hide", !on);
-  // disable answer buttons while loading
   quizRefs.answers.forEach((b) => {
     b.disabled = on;
     b.classList.toggle("disabled", on);
@@ -287,10 +288,9 @@ function displayFinalScore() {
 
   renderLeaderboard();
 
-  const msg =
-    score < Math.ceil(total / 2) ?
-    `${username} can do better! Keep trying.` :
-    `Congratulations, ${username}! You've done a great job!`;
+  const msg = (score < Math.ceil(total / 2)) ?
+  `${username} can do better! Keep trying.` :
+  `Congratulations, ${username}! You've done a great job!`;
 
   if (typeof scoreMessageRef !== "undefined" && scoreMessageRef) {
     scoreMessageRef.textContent = msg;
@@ -341,32 +341,35 @@ function isNameValid(value) {
   return v.length >= 2;
 }
 
-// Enable/disable difficulty buttons based on name validity
-
-function updateLevelButtonsState() {
-  const valid = isNameValid(nameInput.value);
-  levelBtns.forEach((btn) => {
-    btn.disabled = !valid;
-  });
-}
-
 // Visual feedback for selected difficulty
 
 function markActiveDifficulty(activeBtn) {
   levelBtns.forEach((b) => b.classList.remove("active"));
   activeBtn.classList.add("active");
 }
+// Start on card click + show native validation popup if username is invalid
+levelBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (!nameInput.checkValidity()) {
+      nameInput.reportValidity();
+      nameInput.focus();
+      return;
+    }
+
+    const level = btn.dataset.level;
+    session.username = nameInput.value.trim();
+    session.difficulty = level;
+
+    markActiveDifficulty(btn);
+    startQuiz(level);
+  });
+});
 
 // Live username validation
 
 if (nameInput) {
   nameInput.addEventListener("input", () => {
-    if (isNameValid(nameInput.value)) {
-      setError("");
-    } else {
-      setError("Please enter at least 2 characters.");
-    }
-    updateLevelButtonsState();
+    setError("");
   });
 }
 
@@ -382,41 +385,14 @@ if (saveBtn) {
     session.username = nameInput.value.trim();
     localStorage.setItem("gg_username", session.username);
     setError("Saved ✓");
-    updateLevelButtonsState();
   });
 }
 const savedName = localStorage.getItem("gg_username");
 if (savedName) {
   nameInput.value = savedName;
   setError("");
-  updateLevelButtonsState();
+  
 }
-// Start handlers
-
-levelBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const level = btn.dataset.level;
-
-    // Username validation
-
-    if (!isNameValid(nameInput.value)) {
-      setError("Please enter your username before starting.");
-      nameInput.focus();
-      return;
-    }
-
-    // Set session state
-
-    session.username = nameInput.value.trim();
-    session.difficulty = level;
-
-    // Highlight the chosen difficulty
-
-    markActiveDifficulty(btn);
-
-    startQuiz(level);
-  });
-});
 
 // Clear saved username when going Home
 document.querySelectorAll('a[href="index.html"]').forEach((a) => {
@@ -425,4 +401,3 @@ document.querySelectorAll('a[href="index.html"]').forEach((a) => {
   });
 });
 
-updateLevelButtonsState();
