@@ -600,9 +600,27 @@ Both scripts passed validation successfully.
 | As a user, I want to send feedback or suggestions to the GeoGenius developers, so I can share my thoughts or report issues. | Feedback form in navbar allows name, email, and message submission.       | Yes  | [Feedback Form](docs/user-story7.png "Feedback Form")     |
 | As a user, I want the quiz to work smoothly on any device.                               | Fully responsive design confirmed through device testing.                 | Yes  | [Responsive View](docs/user-story9.png "Responsive View") |
 
-
+---
 ## Form Validation Testing
 
+The **GeoGenius** website contains two forms that require input validation:
+
+1. **Username input** on the landing page — ensures players enter a valid name before starting the quiz.  
+2. **Feedback form** in the navigation bar — ensures all required fields are completed with valid data before submission.
+
+Both forms rely on built-in HTML5 validation and custom JavaScript error handling for clear, user-friendly feedback.
+
+| **Field** | **Expected Behavior** | **Tested Input** | **Result** | **Evidence** |
+|------------|------------------------|------------------|-------------|---------------|
+| **Username** | Required. Must not accept empty input. | Left empty | Submission blocked. Inline browser message: *"Please fill out this field."* | ![Username Empty](docs/formtest-username-empty.png) |
+| **Username** | Minimum 2 characters required. | One character entered ("A") | Custom error displayed below field: *"Please enter at least 2 characters."* | ![Username Too Short](docs/formtest-username-short.png) |
+| **Username** | Valid input (≥2 characters). | "Alex" | Message *"Saved ✓"* shown. Name stored in localStorage. | ![Username Saved](docs/formtest-username-saved.png) |
+| **Feedback – Name** | Required. Must not accept empty input. | Left empty | Submission blocked. Inline browser message: *"Please fill in this field."* | ![Feedback Name Empty](docs/formtest-fb-name.png) |
+| **Feedback – Email** | Required. Must not accept empty input. | Left empty | Submission blocked. Inline browser message: *"Please fill in this field."* | ![Feedback Email Empty](docs/formtest-fb-email.png) |
+| **Feedback – Email** | Must include a valid “@” symbol. | "alexmail.com" | Inline browser message: *"Please include an '@' in the email address."* | ![Feedback Invalid Email](docs/formtest-fb-invalidemail.png) |
+| **Feedback – Message** | Required. Must not accept empty input. | Left empty | Submission blocked. Inline browser message: *"Please fill in this field."* | ![Feedback Message Empty](docs/formtest-fb-message.png) |
+
+---
 
 ### Lighthouse Testing 
 
