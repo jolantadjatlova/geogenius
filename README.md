@@ -60,8 +60,6 @@ To view the deployed website click [here](https://jolantadjatlova.github.io/geog
 - [Final Tidy-Up](#final-tidy-up)
 
 ## UX
-
-
 ### The 5 Planes of UX
 
 #### 1. Strategy
@@ -291,18 +289,10 @@ to help focus on what was most essential for the MVP.
 
 ![GitHub Issues](docs/github-gg-issues.png)
 
----
-
 [Back to contents](#contents)
 
-
-
-
-
-
----
-
 ### MoSCoW Prioritization
+
 To prioritize tasks effectively, I applied the **MoSCoW method**:
 
 | **Priority** | **Description** |
@@ -324,8 +314,6 @@ It depicts a bright blue sky with global landmarks such as the Eiffel Tower, Big
 The playful illustration style with planes, birds, and hot-air balloons adds an educational yet fun atmosphere, while keeping the focus on the quiz interface.  
 The image was intentionally designed to be light and non-distracting, ensuring readability of the text and buttons.
 
-
----
 ### Responsiveness
 
 The GeoGenius website adapts seamlessly to different screen sizes using custom CSS media queries.  
@@ -341,6 +329,10 @@ To view detailed responsiveness results, see the [Responsiveness Test](#responsi
 
 # Features
 
+GeoGenius provides a clean, structured, and intuitive layout that makes navigation simple on any device.  
+Players can easily start a quiz, change difficulty levels, and access helpful features such as **Instructions**, **Feedback**, and **High Scores**.  
+With timed multiple-choice questions, instant right-or-wrong feedback, and visually clear progress tracking, the quiz offers an engaging and educational experience.  
+These interactive elements encourage users to test their knowledge repeatedly while improving their geography skills in a fun and motivating way.
 
 ## Existing Features
 
@@ -495,9 +487,7 @@ Both the **navbar** and **footer** are consistent with the rest of the site, mai
 
 [Back to top](#contents)
 
-
 ### Future Enhancements
-
 
 [Back to contents](#contents)
 
@@ -526,7 +516,6 @@ Both the **navbar** and **footer** are consistent with the rest of the site, mai
 | [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) | Validate CSS syntax and detect errors. | Tool |
 | [JSHint](https://jshint.com/) | Validate JavaScript syntax and code quality. | Tool |
    
-
 [Back to contents](#contents)
 
 # Testing
@@ -574,7 +563,6 @@ Both scripts passed validation successfully.
 
 
 ## User Story Testing
-
 
 | User Story                                                                               | Result                                                                    | Pass | Screenshot                                                |
 | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ---- | --------------------------------------------------------- |
