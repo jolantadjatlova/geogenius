@@ -344,6 +344,157 @@ To view detailed responsiveness results, see the [Responsiveness Test](#responsi
 
 ## Existing Features
 
+### Navbar
+
+A single, responsive, sticky navbar is used across the entire site.  
+It displays the **GeoGenius** brand on the left and two dropdown controls on the right: **Instructions** and **Feedback**.  
+On smaller screens, the same navbar collapses into a hamburger menu using Bootstrap’s built-in responsive behavior.
+
+<details><summary><b>Navbar View</b></summary>
+
+![Navbar](docs/navbar-gg.png)
+
+</details><br/>
+
+- **Instructions** — Opens a concise, step-by-step guide in a dropdown.  
+- **Feedback** — Opens a small contact form that collects **Name**, **Email**, and **Message**.  
+  All fields are required and validated by the browser.  
+  On successful submission, users see a confirmation message on a separate page (`success.html`).
+
+[Back to top](#contents)
+
+---
+
+### Landing View
+
+The quiz is a single-page web app optimized for quick performance.  
+The landing area includes:
+
+- The quiz title (**GeoGenius Quiz**)
+- A **username** input and **Save** button
+- Three **difficulty level cards**: Easy, Medium, and Hard
+
+All buttons feature hover effects, and the active difficulty card highlights clearly.  
+Both the **username** and a **difficulty level** must be set to begin.  
+Once confirmed, the app fetches 10 geography questions from **Open Trivia DB** based on the chosen difficulty.
+
+
+<details><summary><b>Landing View</b></summary>
+
+![Landing View](docs/landing-gg-view.png)
+
+</details><br/>
+
+[Back to top](#contents)
+
+---
+
+### Question View
+
+Each quiz question is multiple choice and displayed one at a time with four possible answers.  
+
+**Features include:**
+- A **20-second countdown timer** per question  
+- Automatic skip when time runs out  
+- Correct answers highlighted in **green**, incorrect in **red**  
+- A **progress tracker** showing question number (e.g., `Q3/10`)  
+- A **score summary** that updates live (✔️ correct / ❌ wrong)
+
+<details><summary><b>Question View</b></summary>
+
+![Question View](docs/question-window.png)
+
+</details><br/>
+
+[Back to top](#contents)
+
+---
+
+### Final Score View
+
+After the last question, the app displays the player’s results:  
+a personalized message with the username, the final score, and total questions answered.
+
+Two buttons appear:
+
+- **Play Again** — Resets the game and returns to the landing screen.  
+- **High Scores** — Toggles the leaderboard of saved scores.
+
+<details><summary><b>Final Score View</b></summary>
+
+![Final Score](docs/final-score.png)
+
+</details><br/>
+
+[Back to top](#contents)
+
+---
+
+### High Score
+
+The app saves the **Top 5** scores locally using the browser’s `localStorage`.  
+Players can toggle the leaderboard open or closed with the **High Scores** button to view recent results.  
+This helps users track progress and encourages replayability.
+
+<details><summary><b>Player Scores View</b></summary>
+
+![Player Scores View](docs/high-scores-view.png)
+
+</details><br/>
+
+[Back to top](#contents)
+
+---
+
+### Footer
+
+A clean, minimalist footer continues the cool-toned theme and includes two icons:  
+**GitHub** and **LinkedIn**, both opening in new tabs.  
+Icons have hover effects for improved user experience.
+
+<details><summary><b>Footer</b></summary>
+
+![Footer](docs/footer-gg.png)
+
+
+</details><br/>
+
+[Back to top](#contents)
+
+---
+
+### Loader
+
+While questions are being fetched from **Open Trivia DB**, a small animated spinner appears inside the quiz card.  
+This prevents the question area from appearing empty.  
+If the API fails to respond, a friendly error message prompts the user to retry.
+
+<details><summary><b>Loader</b></summary>
+
+![Loader](docs/loader.png)
+
+</details><br/>
+
+[Back to top](#contents)
+
+### 404 Page
+
+A custom **404 error page** ensures a smooth experience if the user visits a broken or invalid link.  
+It displays a friendly themed message — *“Wrong Coordinates!”* — keeping with the geography and travel style of the site.
+
+The page automatically **redirects back to the homepage** after a short countdown, handled by a small JavaScript file (`redirect.js`).  
+A **Navigate Home** button also allows users to manually return immediately.
+
+Both the **navbar** and **footer** are consistent with the rest of the site, maintaining brand continuity and accessibility.
+
+<details><summary><b>404 Page View</b></summary>
+
+![404 Page View](docs/404-page-gg.png)
+
+</details><br/>
+
+[Back to top](#contents)
+
 
 ### Future Enhancements
 
