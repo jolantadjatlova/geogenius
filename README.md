@@ -489,6 +489,12 @@ Both the **navbar** and **footer** are consistent with the rest of the site, mai
 
 ### Future Enhancements
 
+- **Add sound effects** for correct and wrong answers to make gameplay more engaging.  
+- **Introduce quiz categories** (e.g., capitals, landmarks, flags) so players can choose specific topics.  
+- **Include global leaderboard** using a backend database to compare scores between users.  
+- **Add progress dots or bar** under the timer to visualize answered questions.   
+- **Add more animations** (e.g., confetti or fade transitions) for correct answers and final results.    
+
 [Back to contents](#contents)
 
 ## Technologies Used
@@ -528,6 +534,18 @@ Both the **navbar** and **footer** are consistent with the rest of the site, mai
 | Correct answer not highlighted | Fixed | Sometimes the right answer didn’t turn green after selection. | Cleared all button styles before each question and ensured the correct button always gets the green highlight. |
 
 ## Responsiveness Test
+
+I've tested my deployed project on different devices and screen sizes to ensure that all pages display correctly and remain fully functional.
+
+| **Page** | **Mobile** | **Tablet** | **Desktop** | **Notes** |
+|-----------|-------------|-------------|--------------|------------|
+| **Home / Landing** | ![Home Mobile](docs/home-mobile.png) | ![Home Tablet](docs/home-tablet-gg.png) | ![Home Desktop](docs/home-desktop-gg.png) | Works as expected |
+| **Quiz View** | ![Quiz Mobile](docs/quiz-mobile.png) | ![Quiz Tablet](docs/quiz-tablet.png) | ![Quiz Desktop](docs/quiz-desktop.png) | Works as expected |
+| **Final Score** | ![Final Score Mobile](docs/final-score-mobile.png) | ![Final Score Tablet](docs/final-score-tablet.png) | ![Final Score Desktop](docs/final-score-desktop.png) | Works as expected |
+| **High Scores** | ![High Scores Mobile](docs/high-scores-mobile.png) | ![High Scores Tablet](docs/high-scores-tablet.png) | ![High Scores Desktop](docs/high-scores-desktop.png) | Works as expected |
+| **Feedback Form** | ![Feedback Mobile](docs/feedback-mobile.png) | ![Feedback Tablet](docs/feedback-tablet.png) | ![Feedback Desktop](docs/feedback-desktop.png) | Works as expected |
+| **Success Page** | ![Success Mobile](docs/success-mobile.png) | ![Success Tablet](docs/success-tablet.png) | ![Success Desktop](docs/success-desktop.png) | Works as expected |
+| **404 Page** | ![404 Mobile](docs/404-mobile.png) | ![404 Tablet](docs/404-tablet.png) | ![404 Desktop](docs/404-desktop.png) | Works as expected |
 
 ## Code Validation
 
