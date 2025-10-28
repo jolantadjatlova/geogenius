@@ -96,6 +96,7 @@ function showOrHide(elements, showElement) {
 // API error handler
 
 function handleApiError() {
+  stopTimer();
   showOrHide([quizRefs.screens.quiz], true);
 
   showOrHide([quizRefs.screens.hero], false);
@@ -149,6 +150,7 @@ function startTimer() {
 // Start the game
 
 async function startQuiz(level) {
+  stopTimer();
   quizState.level = level;
   quizState.idx = 0;
   quizState.score = 0;
@@ -324,6 +326,7 @@ function renderLeaderboard() {
 // Play again → full reset
 if (quizRefs.playAgain) {
   quizRefs.playAgain.addEventListener("click", () => {
+    stopTimer();
     location.reload();
   });
 }
