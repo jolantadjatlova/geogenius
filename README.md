@@ -12,26 +12,20 @@ To view the deployed website click [here](https://jolantadjatlova.github.io/geog
 ### Contents
 
 - [UX](#ux)
-  - [Website Intentions](#website-intentions)
-    - [For the User](#for-the-user)
-    - [For the Site Developer](#for-the-site-developer)
+  - [The 5 Planes of UX](#the-5-planes-of-ux)
+    - [1. Strategy](#1-strategy)
+    - [2. Scope](#2-scope)
+    - [3. Structure](#3-structure)
+    - [4. Skeleton](#4-skeleton)
+    - [5. Surface](#5-surface)
   - [User Goals](#user-goals)
   - [User Stories](#user-stories)
 - [Agile Development Process](#agile-development-process)
-  - [Project Requirements & Scope](#project-requirements--scope)
-    - [Requirements](#requirements)
-    - [Scope](#scope)
   - [Planning Tools & Workflow](#planning-tools--workflow)
     - [GitHub Projects (Kanban)](#github-projects-kanban)
     - [GitHub Issues](#github-issues)
     - [MoSCoW Prioritization](#moscow-prioritization)
-- [Architecture & Design](#architecture--design)
-
-- [Wireframes](#wireframes)
-- [Design Choices](#design-choices)
-  - [Typography](#typography)
-  - [Colour Scheme](#colour-scheme)
-  - [Contrast Grid](#contrast-grid)
+- [Design](#design)
   - [Images](#images)
   - [Responsiveness](#responsiveness)
 - [Features](#features)
@@ -44,17 +38,18 @@ To view the deployed website click [here](https://jolantadjatlova.github.io/geog
   - [Code Validation](#code-validation)
     - [HTML](#html)
     - [CSS](#css)
+    - [JavaScript](#javascript)
   - [User Story Testing](#user-story-testing)
   - [Form Validation Testing](#form-validation-testing)
   - [Lighthouse Testing](#lighthouse-testing)
   - [Browser Testing](#browser-testing)
 - [Deployment](#deployment)
-  - [To deploy the project](#to-deploy-the-project)
-  - [To fork the project](#to-fork-the-project)
-  - [To clone the project](#to-clone-the-project)
+  - [To Deploy the Project](#to-deploy-the-project)
+  - [To Fork the Project](#to-fork-the-project)
+  - [To Clone the Project](#to-clone-the-project)
 - [Credits](#credits)
-  - [Feedback, advice and support](#feedback-advice-and-support)
-  - [Learning help and Resources](#learning-help-and-resources)
+  - [Feedback, Advice and Support](#feedback-advice-and-support)
+  - [Learning Help and Resources](#learning-help-and-resources)
   - [Images](#images-1)
   - [Visual Content](#visual-content)
 - [Final Tidy-Up](#final-tidy-up)
@@ -97,6 +92,8 @@ To view the deployed website click [here](https://jolantadjatlova.github.io/geog
 - Apply Bootstrap for consistency and efficient responsive layout.
 
 - Create a visually engaging, interactive quiz that could serve educational or recreational purposes.
+
+[Back to contents](#contents)
 
 #### 2. Scope
 
@@ -219,7 +216,9 @@ A contrast grid was used to ensure that text and interactive elements meet acces
 - High colour contrast for legibility.  
 - `aria-live` and `role="status"` attributes ensure updates are announced to assistive technology.  
 - Fully keyboard navigable with visible focus states.  
-- Clear error messaging and validation for username input.  
+- Clear error messaging and validation for username input. 
+
+[Back to contents](#contents)
 
 ## User Goals
 
@@ -241,8 +240,6 @@ A contrast grid was used to ensure that text and interactive elements meet acces
 - As a user, I want to see **how far through the quiz** I am.  
 - As a user, I want the quiz to work **smoothly on any device**.  
 - As a user, I want to click an answer and know **immediately if I was right or wrong**.  
-
-[Back to contents](#contents)
 
 ## Agile Development Process
 
@@ -325,8 +322,6 @@ The layout, typography, and interactive elements dynamically adjust to ensure us
 
 To view detailed responsiveness results, see the [Responsiveness Test](#responsiveness-test).
 
-[Back to contents](#contents)
-
 # Features
 
 GeoGenius provides a clean, structured, and intuitive layout that makes navigation simple on any device.  
@@ -353,7 +348,7 @@ On smaller screens, the same navbar collapses into a hamburger menu using Bootst
   All fields are required and validated by the browser.  
   On successful submission, users see a confirmation message on a separate page (`success.html`).
 
-[Back to top](#contents)
+[Back to contents](#contents)
 
 ---
 
@@ -377,8 +372,6 @@ Once confirmed, the app fetches 10 geography questions from **Open Trivia DB** b
 
 </details><br/>
 
-[Back to top](#contents)
-
 ---
 
 ### Question View
@@ -398,7 +391,7 @@ Each quiz question is multiple choice and displayed one at a time with four poss
 
 </details><br/>
 
-[Back to top](#contents)
+[Back to contents](#contents)
 
 ---
 
@@ -418,8 +411,6 @@ Two buttons appear:
 
 </details><br/>
 
-[Back to top](#contents)
-
 ---
 
 ### High Score
@@ -433,8 +424,6 @@ This helps users track progress and encourages replayability.
 ![Player Scores View](docs/high-scores-view.png)
 
 </details><br/>
-
-[Back to top](#contents)
 
 ---
 
@@ -451,7 +440,7 @@ Icons have hover effects for improved user experience.
 
 </details><br/>
 
-[Back to top](#contents)
+[Back to contents](#contents)
 
 ---
 
@@ -466,8 +455,6 @@ If the API fails to respond, a friendly error message prompts the user to retry.
 ![Loader](docs/loader.png)
 
 </details><br/>
-
-[Back to top](#contents)
 
 ### 404 Page
 
@@ -585,6 +572,7 @@ Both scripts passed validation successfully.
 - **Redirect Script (`redirect.js`):**  
   ![Redirect JS Validation](docs/redirect.js.png)
 
+[Back to contents](#contents)
 
 ## User Story Testing
 
@@ -659,14 +647,25 @@ Tested on **Google Chrome**, **Mozilla Firefox**, and **Microsoft Edge** on desk
 | **404 Page** | ![Chrome](docs/browser-404-chrome.png) | ![Firefox](docs/browser-404-firefox.png) | ![Edge](docs/browser-404-edge.png) | Works as expected |
 
 ---
-
-
-
 [Back to contents](#contents)
 
 # Deployment
 
 ## To deploy the project
+
+The **GeoGenius** website was deployed using **GitHub Pages**.  
+
+To deploy the project:
+- Log in to GitHub and navigate to the repository.
+- Click on the **Settings** tab in the navigation bar at the top of the repository.
+- In the **Code and Automation** section of the sidebar, select **Pages**.
+- Under **Source**, choose **Deploy from a branch**.
+- In the **Branch** dropdown, select **main**, then click **Save**.
+- GitHub will automatically build and deploy the site.  
+   Once published, the live link will appear at the top of the **Pages** section.
+
+You can view the deployed site here:  
+🔗 [https://jolantadjatlova.github.io/geogenius/](https://jolantadjatlova.github.io/geogenius/)
 
 
 ## To fork the project
@@ -689,22 +688,25 @@ Forking the GitHub repository allows you to create a duplicate of a local reposi
 - Type git clone, and then paste the URL you copied earlier.
 - Press Enter to create your local clone.
 
-[Back to contents](#contents)
-
 # Credits
 
-#### Feedback, advice and support:
+#### Feedback, Advice, and Support
 
-  - [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin")
+- [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") – Code Institute mentor, for continuous support, detailed feedback, and invaluable guidance throughout the project’s development.  
+- [Rory Patrick Sheridan](https://github.com/Ri-Dearg "Rory Patrick Sheridan") – Code Institute mentor, for constructive feedback and helpful insights during the project’s milestone reviews and final assessment.  
 
-#### Learning help and Resources
+#### Learning Help and Resources
 
+- [Code Institute](https://codeinstitute.net/) course material and walkthrough projects.  
+- [MDN Web Docs](https://developer.mozilla.org/) – for official HTML, CSS, and JavaScript references and examples.  
+- [Stack Overflow](https://stackoverflow.com/) – for troubleshooting and community support.  
+- [W3Schools](https://www.w3schools.com/) – for additional syntax and styling resources.
+- **ChatGPT** – used as a supportive tool to clarify coding concepts, structure documentation (README), and refine explanations or error messages during development.
 
-#### Images:
+#### Images
 
-
-#### Visual Content:
-
+- The hero background image was generated using **ChatGPT image tools**, representing global landmarks and travel imagery in a light, educational style.
+- All icons provided by **Font Awesome**.
 
 # Final Tidy-Up
 
