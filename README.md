@@ -521,6 +521,12 @@ Both the **navbar** and **footer** are consistent with the rest of the site, mai
 # Testing
 ## Bugs
 
+| **Bug** | **Status** | **Description** | **Steps to Resolve** |
+|----------|-------------|-----------------|----------------------|
+| Timer keeps running after game | Fixed | The countdown continued after the results screen and sometimes into a new game. | Centralized `stopTimer()` on every screen change; start timer only in `renderQuestion()`. |
+| Feedback validation message not showing | Fixed | Validation warning didn’t appear because the dropdown closed automatically before showing it. | Made the Feedback dropdown stay open until manually closed, allowing the warning to display correctly. |
+| Correct answer not highlighted | Fixed | Sometimes the right answer didn’t turn green after selection. | Cleared all button styles before each question and ensured the correct button always gets the green highlight. |
+
 ## Responsiveness Test
 
 ## Code Validation
