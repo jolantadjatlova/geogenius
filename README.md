@@ -614,10 +614,10 @@ Both forms rely on built-in HTML5 validation and custom JavaScript error handlin
 |------------|------------------------|------------------|-------------|---------------|
 | **Username** | Required. Must not accept empty input. | Left empty | Submission blocked. Inline browser message: *"Please fill out this field."* | ![Username Empty](docs/formtest-username-empty.png) |
 | **Username** | Minimum 2 characters required. | One character entered ("A") | Custom error displayed below field: *"Please enter at least 2 characters."* | ![Username Too Short](docs/formtest-username-short.png) |
-| **Username** | Valid input (≥2 characters). | "Alex" | Message *"Saved ✓"* shown. Name stored in localStorage. | ![Username Saved](docs/formtest-username-saved.png) |
+| **Username** | Valid input (≥2 characters). | "jolanta" | Message *"Saved ✓"* shown. Name stored in localStorage. | ![Username Saved](docs/formtest-username-saved.png) |
 | **Feedback – Name** | Required. Must not accept empty input. | Left empty | Submission blocked. Inline browser message: *"Please fill in this field."* | ![Feedback Name Empty](docs/formtest-fb-name.png) |
 | **Feedback – Email** | Required. Must not accept empty input. | Left empty | Submission blocked. Inline browser message: *"Please fill in this field."* | ![Feedback Email Empty](docs/formtest-fb-email.png) |
-| **Feedback – Email** | Must include a valid “@” symbol. | "alexmail.com" | Inline browser message: *"Please include an '@' in the email address."* | ![Feedback Invalid Email](docs/formtest-fb-invalidemail.png) |
+| **Feedback – Email** | Must include a valid “@” symbol. | "jo" | Inline browser message: *"Please include an '@' in the email address."* | ![Feedback Invalid Email](docs/formtest-fb-invalidemail.png) |
 | **Feedback – Message** | Required. Must not accept empty input. | Left empty | Submission blocked. Inline browser message: *"Please fill in this field."* | ![Feedback Message Empty](docs/formtest-fb-message.png) |
 
 ---
@@ -644,6 +644,22 @@ This tool inspects and scores the website for the following criteria:
 
 
 ## Browser Testing
+
+Tested on **Google Chrome**, **Mozilla Firefox**, and **Microsoft Edge** on desktop.  
+
+| **Page** | **Chrome** | **Firefox** | **Microsoft Edge** | **Notes** |
+|---|---|---|---|---|
+| **Home / Landing** | ![Chrome](docs/browser-home-chrome.png) | ![Firefox](docs/browser-home-firefox.png) | ![Edge](docs/browser-home-edge.png) | Works as expected |
+| **Instructions Dropdown** | ![Chrome](docs/browser-instructions-chrome.png) | ![Firefox](docs/browser-instructions-firefox.png) | ![Edge](docs/browser-instructions-edge.png) | Works as expected |
+| **Quiz View** | ![Chrome](docs/browser-quiz-chrome.png) | ![Firefox](docs/browser-quiz-firefox.png) | ![Edge](docs/browser-quiz-edge.png) | Works as expected |
+| **Final Score** | ![Chrome](docs/browser-final-chrome.png) | ![Firefox](docs/browser-final-firefox.png) | ![Edge](docs/browser-final-edge.png) | Works as expected |
+| **High Scores** | ![Chrome](docs/browser-scores-chrome.png) | ![Firefox](docs/browser-scores-firefox.png) | ![Edge](docs/browser-scores-edge.png) | Works as expected |
+| **Feedback Form** | ![Chrome](docs/browser-feedback-chrome.png) | ![Firefox](docs/browser-feedback-firefox.png) | ![Edge](docs/browser-feedback-edge.png) | Works as expected |
+| **Success Page** | ![Chrome](docs/browser-success-chrome.png) | ![Firefox](docs/browser-success-firefox.png) | ![Edge](docs/browser-success-edge.png) | Works as expected |
+| **404 Page** | ![Chrome](docs/browser-404-chrome.png) | ![Firefox](docs/browser-404-firefox.png) | ![Edge](docs/browser-404-edge.png) | Works as expected |
+
+---
+
 
 
 [Back to contents](#contents)
