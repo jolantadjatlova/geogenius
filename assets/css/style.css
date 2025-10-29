@@ -586,7 +586,7 @@ main {
     max-width: none !important;       
     width: min(92vw, 300px) !important;  
   }
-}
+
  body {
     overflow-y: auto;
   }
@@ -639,6 +639,7 @@ main {
   white-space: nowrap;
   font-size: 1.8rem;
   line-height: 1.1;
+}
 }
 
 @media (min-width: 577px) and (max-width: 991.98px) {
