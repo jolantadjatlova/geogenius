@@ -576,6 +576,22 @@ main {
 }
 
 @media (max-width: 576px) {
+
+   .quiz-card,
+  .results-card {
+    width: min(92vw, 640px);     
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 18px;       
+    padding: 1.25rem;            
+    box-sizing: border-box;
+  }
+
+  .answers {
+    gap: 10px;
+    max-width: none;             
+    margin-top: 0.75rem;
+  }
    #feedbackMenuDropdown {
     min-width: 0 !important;
     max-width: none !important;
