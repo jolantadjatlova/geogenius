@@ -1,6 +1,13 @@
 # [GeoGenius](https://jolantadjatlova.github.io/geogenius/)
 
 Developer: Jolanta Djatlova ([jolantadjatlova](https://github.com/jolantadjatlova))
+
+This project represents my first fully interactive JavaScript web application, developed as part of the **Code Institute’s JavaScript Essentials milestone**.
+
+GeoGenius was developed to combine fun and learning through interactive geography quizzes.  
+The project demonstrates key JavaScript skills including **API integration**, **DOM manipulation**, and **logic control**.  
+I chose this concept to challenge myself to create a dynamic web app that delivers instant feedback and works seamlessly across devices.
+
 ## Fully Functional Interactive Quiz Website
 
 A fun, interactive geography quiz game where players can test their knowledge by choosing a difficulty level and answering world geography questions. Built using **HTML, CSS, and JavaScript**.
@@ -25,7 +32,6 @@ To view the deployed website click [here](https://jolantadjatlova.github.io/geog
     - [GitHub Projects (Kanban)](#github-projects-kanban)
     - [GitHub Issues](#github-issues)
     - [MoSCoW Prioritization](#moscow-prioritization)
-- [Design](#design)
   - [Images](#images)
   - [Responsiveness](#responsiveness)
 - [Features](#features)
@@ -51,7 +57,6 @@ To view the deployed website click [here](https://jolantadjatlova.github.io/geog
   - [Feedback, Advice and Support](#feedback-advice-and-support)
   - [Learning Help and Resources](#learning-help-and-resources)
   - [Images](#images-1)
-  - [Visual Content](#visual-content)
 - [Final Tidy-Up](#final-tidy-up)
 
 ## UX
@@ -348,8 +353,6 @@ On smaller screens, the same navbar collapses into a hamburger menu using Bootst
   All fields are required and validated by the browser.  
   On successful submission, users see a confirmation message on a separate page (`success.html`).
 
-[Back to contents](#contents)
-
 ---
 
 ### Landing View
@@ -390,8 +393,6 @@ Each quiz question is multiple choice and displayed one at a time with four poss
 ![Question View](docs/question-window.png)
 
 </details><br/>
-
-[Back to contents](#contents)
 
 ---
 
@@ -440,8 +441,6 @@ Icons have hover effects for improved user experience.
 
 </details><br/>
 
-[Back to contents](#contents)
-
 ---
 
 ### Loader
@@ -472,7 +471,7 @@ Both the **navbar** and **footer** are consistent with the rest of the site, mai
 
 </details><br/>
 
-[Back to top](#contents)
+[Back to contents](#contents)
 
 ### Future Enhancements
 
@@ -481,8 +480,6 @@ Both the **navbar** and **footer** are consistent with the rest of the site, mai
 - **Include global leaderboard** using a backend database to compare scores between users.  
 - **Add progress dots or bar** under the timer to visualize answered questions.   
 - **Add more animations** (e.g., confetti or fade transitions) for correct answers and final results.    
-
-[Back to contents](#contents)
 
 ## Technologies Used
 
@@ -709,5 +706,22 @@ Forking the GitHub repository allows you to create a duplicate of a local reposi
 - All icons provided by **Font Awesome**.
 
 # Final Tidy-Up
+
+Before submitting, I carefully reviewed and refined all elements of the **GeoGenius** project to ensure it met the Code Institute assessment standards.  
+This included final validation of all code, accessibility checks, and thorough proofreading of the README and documentation.  
+
+Through this project, I strengthened my understanding of:
+- JavaScript interactivity and DOM manipulation  
+- API integration and dynamic content handling  
+- Accessibility principles and responsive design  
+- Agile development practices using GitHub Projects and Issues  
+
+This project intentionally keeps one non-fatal console message:
+
+- `console.warn("API failed:", e);` — used to surface API or network issues during testing without breaking the user flow.  
+
+All other temporary debug logs were removed prior to submission to keep the console clean and professional.
+
+Building **GeoGenius** deepened my confidence in front-end web development and my ability to create engaging, user-focused digital experiences.
 
 [Back to contents](#contents)
