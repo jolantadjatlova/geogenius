@@ -576,7 +576,18 @@ main {
 }
 
 @media (max-width: 576px) {
-  body {
+   #feedbackMenuDropdown {
+    min-width: 0 !important;
+    max-width: none !important;
+    width: min(92vw, 300px) !important;
+   } 
+     #instrMenuDropdown {
+    min-width: 0 !important;         
+    max-width: none !important;       
+    width: min(92vw, 300px) !important;  
+  }
+}
+ body {
     overflow-y: auto;
   }
   main {
@@ -629,6 +640,26 @@ main {
   font-size: 1.8rem;
   line-height: 1.1;
 }
+
+@media (min-width: 577px) and (max-width: 991.98px) {
+  #feedbackMenuDropdown,
+  #instrMenuDropdown {
+    position: absolute !important;
+    right: auto !important;
+    left: 0 !important;
+    transform: none !important;
+    min-width: 0 !important;
+    width: min(50vw, 300px);            
+    --bs-dropdown-bg: var(--accent);
+    background-color: var(--accent) !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    border-radius: 22px !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+    color: #fff;
+    max-height: 70vh;                  
+    overflow: auto;
+    z-index: 1050;                     
+  }
 }
 
 @media (min-width: 992px) {
