@@ -530,7 +530,9 @@ I've tested my deployed project on different devices and screen sizes to ensure 
 | **Feedback Form** | ![Feedback Mobile](docs/feedback-mobile.png) | ![Feedback Tablet](docs/feedback-tablet.png) | ![Feedback Desktop](docs/feedback-desktop.png) | Works as expected |
 | **Success Page** | ![Success Mobile](docs/success-mobile.png) | ![Success Tablet](docs/success-tablet.png) | ![Success Desktop](docs/success-desktop.png) | Works as expected |
 | **404 Page** | ![404 Mobile](docs/404-mobile.png) | ![404 Tablet](docs/404-tablet.png) | ![404 Desktop](docs/404-desktop.png) | Works as expected |
+| **Instructions Dropdown** | ![Instructions Mobile](docs/instructions-mobile.png) | ![Instructions Tablet](docs/instructions-tablet.png) | ![Instructions Desktop](docs/instructions-desktop.png) | Works as expected |
 
+---
 ## Code Validation
 
 ### HTML
