@@ -223,6 +223,19 @@ A contrast grid was used to ensure that text and interactive elements meet acces
 - Fully keyboard navigable with visible focus states.  
 - Clear error messaging and validation for username input. 
 
+### UX Design Principles Applied
+
+The design of **GeoGenius** follows key usability and accessibility principles to ensure an intuitive, enjoyable, and inclusive experience:
+
+- **Consistency:** Layout, colors, and buttons follow a consistent style across all pages to reduce cognitive load.  
+- **Visibility of system status:** Timers, score counters, and instant answer feedback provide real-time updates to the user.  
+- **User control and freedom:** Players can reset, replay, or change difficulty levels at any time.  
+- **Error prevention and recovery:** Input validation prevents incomplete submissions, and the 404 page offers a clear route back to the homepage.  
+- **Recognition rather than recall:** Clear icons, labels, and visual cues guide the user through each step without requiring prior knowledge.  
+- **Accessibility:** Semantic HTML, ARIA roles, and sufficient color contrast ensure that the site can be navigated using assistive technologies.
+
+These principles were considered at every stage of design and testing to ensure a smooth, rewarding user experience across devices.
+
 [Back to contents](#contents)
 
 ## User Goals
@@ -457,13 +470,11 @@ If the API fails to respond, a friendly error message prompts the user to retry.
 
 ### 404 Page
 
-A custom **404 error page** ensures a smooth experience if the user visits a broken or invalid link.  
-It displays a friendly themed message — *“Wrong Coordinates!”* — keeping with the geography and travel style of the site.
+A custom **404 error page** ensures a smooth, user-friendly experience if someone visits a broken or invalid link.  
+It displays a themed message — *“Wrong Coordinates!”* — that fits the geography concept while maintaining a consistent design with the rest of the site.  
 
-The page automatically **redirects back to the homepage** after a short countdown, handled by a small JavaScript file (`redirect.js`).  
-A **Navigate Home** button also allows users to manually return immediately.
-
-Both the **navbar** and **footer** are consistent with the rest of the site, maintaining brand continuity and accessibility.
+To prevent dead ends, the page automatically redirects back to the homepage after a short countdown (handled by `redirect.js`), while a **Navigate Home** button offers an instant manual option.  
+This approach aligns with good UX practices for navigation recovery, brand consistency, and accessibility.
 
 <details><summary><b>404 Page View</b></summary>
 
@@ -505,6 +516,13 @@ Both the **navbar** and **footer** are consistent with the rest of the site, mai
 | [W3C HTML Validation Service](https://validator.w3.org/) | Validate HTML syntax and structure. | Tool |
 | [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) | Validate CSS syntax and detect errors. | Tool |
 | [JSHint](https://jshint.com/) | Validate JavaScript syntax and code quality. | Tool |
+---
+### External API
+
+| **API Name** | **Purpose** | **Type** |
+|---------------|-------------|----------|
+| [Open Trivia DB API](https://opentdb.com/api_config.php) | Supplies real-time geography quiz questions and multiple-choice answers for each difficulty level. | API |
+---
    
 [Back to contents](#contents)
 
@@ -520,6 +538,8 @@ Both the **navbar** and **footer** are consistent with the rest of the site, mai
 ## Responsiveness Test
 
 I've tested my deployed project on different devices and screen sizes to ensure that all pages display correctly and remain fully functional.
+
+---
 
 | **Page** | **Mobile** | **Tablet** | **Desktop** | **Notes** |
 |-----------|-------------|-------------|--------------|------------|
@@ -570,6 +590,12 @@ Both scripts passed validation successfully.
 
 - **Redirect Script (`redirect.js`):**  
   ![Redirect JS Validation](docs/redirect.js.png)
+
+**Console Review**
+
+All console warnings and errors were resolved prior to submission.  
+A single `console.warn("API failed:", e);` message remains intentionally as a non-fatal alert to aid debugging of API response issues during testing.  
+This follows best practice to keep the console clean while still surfacing useful diagnostic information if a network error occurs.
 
 [Back to contents](#contents)
 
