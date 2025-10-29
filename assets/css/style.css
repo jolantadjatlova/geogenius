@@ -136,9 +136,6 @@ main {
   place-items: center;
   text-align: center;
   box-sizing: border-box;
-  min-height: calc(100dvh - var(--nav-h) - var(--foot-h));
-  max-height: calc(100dvh - var(--nav-h) - var(--foot-h));
-  overflow: hidden;
   padding: 2rem 1rem;
 }
 
@@ -172,12 +169,12 @@ main {
   color: #0f172a;
 }
 #leaderboard-empty {
-  color: #000;  
-  opacity: 1;    
+  color: #000;
+  opacity: 1;
 }
 
 .glass-card:not(.easy):not(.medium):not(.hard) {
-  color: #000000; 
+  color: #000000;
 }
 .glass-card::after {
   content: none;
@@ -226,7 +223,7 @@ main {
   transition: background 0.3s ease;
 }
 .btn:hover {
- filter: brightness(0.9);
+  filter: brightness(0.9);
 }
 
 .answers .answer-btn {
@@ -236,12 +233,13 @@ main {
 
 .answers .answer-btn:hover,
 .answers .answer-btn:focus {
-  background: var(--accent); 
-  filter: none;           
+  background: var(--accent);
+  filter: none;
 }
 
-.answers .btn { 
-  color: #ffffff; }
+.answers .btn {
+  color: #ffffff;
+}
 
 #save-name {
   background: var(--accent);
@@ -490,12 +488,12 @@ main {
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
-
 .site-footer .footer-icon:hover i {
-  color: #E0E0E0 !important;
+  color: #e0e0e0 !important;
   transform: scale(1.1);
 }
 /* Footer icon layout */
+
 .site-footer .container {
   display: flex;
   justify-content: center;
@@ -517,7 +515,7 @@ main {
   text-underline-offset: 2px;
 }
 
-/* 404 and Success Layout - identical behavior to index.html hero */
+/* 404 and Success Layout */
 
 .success-wrap {
   flex: 1;
@@ -537,7 +535,7 @@ main {
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.55);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45),
-              0 16px 36px rgba(0, 0, 0, 0.25);
+    0 16px 36px rgba(0, 0, 0, 0.25);
   background: var(--card-blue);
   color: #000;
   padding: 2rem;
@@ -570,8 +568,7 @@ main {
     overflow: clip;
   }
 
-  .hero, #notfound.success-wrap,
-  .page-success .success-wrap {
+  .hero {
     min-height: calc(100dvh - var(--nav-h) - var(--foot-h) + 4px);
     max-height: calc(100dvh - var(--nav-h) - var(--foot-h) + 4px);
     overflow: hidden;
@@ -609,34 +606,33 @@ main {
 }
 
 @media (max-width: 576px) {
-
-   .quiz-card,
+  .quiz-card,
   .results-card {
-    width: min(92vw, 640px);     
+    width: min(92vw, 640px);
     margin-left: auto;
     margin-right: auto;
-    border-radius: 18px;       
-    padding: 1.25rem;            
+    border-radius: 18px;
+    padding: 1.25rem;
     box-sizing: border-box;
   }
 
   .answers {
     gap: 10px;
-    max-width: none;             
+    max-width: none;
     margin-top: 0.75rem;
   }
-   #feedbackMenuDropdown {
+  #feedbackMenuDropdown {
     min-width: 0 !important;
     max-width: none !important;
     width: min(92vw, 300px) !important;
-   } 
-     #instrMenuDropdown {
-    min-width: 0 !important;         
-    max-width: none !important;       
-    width: min(92vw, 300px) !important;  
+  }
+  #instrMenuDropdown {
+    min-width: 0 !important;
+    max-width: none !important;
+    width: min(92vw, 300px) !important;
   }
 
- body {
+  body {
     overflow-y: auto;
   }
   main {
@@ -685,16 +681,15 @@ main {
   }
 
   .username-card h1 {
-  white-space: nowrap;
-  font-size: 1.8rem;
-  line-height: 1.1;
-}
-     
- #notfound .success-card p:first-of-type{
+    white-space: nowrap;
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+
+  #notfound .success-card p:first-of-type {
     font-size: 1rem;
     line-height: 1.35;
- 
-}
+  }
 }
 
 @media (min-width: 577px) and (max-width: 991.98px) {
@@ -705,16 +700,16 @@ main {
     left: 0 !important;
     transform: none !important;
     min-width: 0 !important;
-    width: min(50vw, 300px);            
+    width: min(50vw, 300px);
     --bs-dropdown-bg: var(--accent);
     background-color: var(--accent) !important;
     border-color: rgba(0, 0, 0, 0.15) !important;
     border-radius: 22px !important;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
     color: #fff;
-    max-height: 70vh;                  
+    max-height: 70vh;
     overflow: auto;
-    z-index: 1050;                     
+    z-index: 1050;
   }
 }
 
@@ -743,19 +738,12 @@ main {
 }
 
 @media (min-width: 1025px) {
-  .hero, #notfound.success-wrap,
-  .page-success .success-wrap {
+  .hero {
     height: calc(100vh - var(--nav-h) - var(--foot-h) + 2px);
     overflow: hidden;
     box-sizing: border-box;
   }
-   main#notfound + footer .container,
-  /* Success page (your <main class="success-wrap"> … ) */
-  main.success-wrap + footer .container {
-    padding-bottom: 1.5rem;  /* adjust if you want more/less */
-  }
 }
-
 
 @media (min-width: 1400px) {
   .hero {
