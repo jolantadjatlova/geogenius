@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     seconds--;
     if (el) el.textContent = `Redirecting in ${seconds} second${seconds !== 1 ? 's' : ''}...`;
     if (seconds <= 0) {
-      clearInterval(t);
+     clearInterval(t);
       window.location.href = 'index.html';
     }
   }, 1000);

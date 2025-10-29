@@ -135,11 +135,11 @@ main {
   display: grid;
   place-items: center;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   padding-bottom: 8rem;
 }
 .success-card {
-  max-width: 520px;
+  max-width: 600px;
   width: 100%;
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.55);
@@ -640,6 +640,12 @@ main {
   font-size: 1.8rem;
   line-height: 1.1;
 }
+     
+ #notfound .success-card p:first-of-type{
+    font-size: 1rem;
+    line-height: 1.35;
+ 
+}
 }
 
 @media (min-width: 577px) and (max-width: 991.98px) {
@@ -677,6 +683,9 @@ main {
     max-height: calc(100dvh - var(--nav-h) - var(--foot-h) + 16px);
     overflow: hidden;
     box-sizing: border-box;
+  }
+  .success-card {
+    max-width: 720px;
   }
 
   .difficulty-container {
