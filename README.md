@@ -179,6 +179,7 @@ To view the deployed website click [here](https://jolantadjatlova.github.io/geog
 **Wireframes** 
 
 Wireframes were created using [Balsamiq](https://balsamiq.com/) to map out the layout for mobile, tablet and desktop screens.
+
 ![Wireframes](docs/geogenius_wireframes.png)
 
 #### 5. Surface
