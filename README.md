@@ -2,7 +2,7 @@
 
 Developer: Jolanta Djatlova ([jolantadjatlova](https://github.com/jolantadjatlova))
 
-This project represents my first fully interactive JavaScript web application, developed as part of the **Code Institute’s JavaScript Essentials milestone**.
+This project represents my first fully interactive JavaScript web application, developed for the **Code Institute’s JavaScript Essentials milestone**.
 
 GeoGenius was developed to combine fun and learning through interactive geography quizzes.  
 The project demonstrates key JavaScript skills including **API integration**, **DOM manipulation**, and **logic control**.  
