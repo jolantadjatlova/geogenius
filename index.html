@@ -84,6 +84,7 @@
       <div class="container-fluid px-0">
         <a class="navbar-brand ps-3" href="index.html">GeoGenius</a>
 
+         <!-- Mobile toggler -->
         <button
           class="navbar-toggler"
           type="button"
@@ -96,8 +97,11 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Collapsible nav content -->
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto align-items-lg-center">
+
+            <!-- Instructions dropdown -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -109,6 +113,8 @@
               >
                 Instructions
               </a>
+
+              <!-- Instructions panel -->
               <div
                 id="instrMenuDropdown"
                 class="dropdown-menu dropdown-menu-end p-3 shadow"
@@ -143,7 +149,11 @@
                 </ol>
               </div>
             </li>
+
+            <!-- Divider (desktop only) -->
             <li class="nav-item d-none d-lg-block px-2 text-white-50">|</li>
+
+              <!-- Feedback dropdown -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -213,6 +223,7 @@
     </nav>
     <main class="flex-fill">
       <section class="hero">
+
         <!-- Username + title card -->
         <div class="glass-card username-card">
           <h1>GeoGenius Quiz</h1>
@@ -260,7 +271,7 @@
         </div>
       </section>
 
-      <!-- QUIZ SCREEN-->
+      <!-- Quiz Screen-->
       <section id="quiz" class="hide">
         <div class="glass-card quiz-card">
           <div class="quiz-bar">
@@ -290,7 +301,7 @@
         </div>
       </section>
 
-      <!-- RESULTS SCREEN -->
+      <!-- Results Screen -->
       <section id="results" class="hide">
         <div class="glass-card results-card">
           <h2>All done!</h2>

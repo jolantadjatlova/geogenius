@@ -12,7 +12,6 @@ const highScoresRef = JSON.parse(localStorage.getItem("highScores")) || [];
 const loadingRef = document.getElementById("loading");
 
 // Quiz refs
-
 const quizRefs = {
   screens: {
     hero: heroRef,
@@ -35,26 +34,18 @@ const QUESTION_TIME = 20;
 let timerId = null;
 let timeLeft = QUESTION_TIME;
 
-//  Toggle leaderboard panel
-
-if (toggleLeaderboardBtn) {
-  toggleLeaderboardBtn.addEventListener("click", () => {
-    leaderboardBoxRef.classList.toggle("hide");
-    if (!leaderboardBoxRef.classList.contains("hide")) {
-      renderLeaderboard();
-    }
-  });
-}
-
 // In-memory data for the ongoing game
-
 const session = {
   username: "",
   difficulty: null,
 };
 
-// API loader
+// quiz state and counters
+let quizState = { list: [], idx: 0, score: 0, level: null };
+let correctCount = 0;
+let wrongCount = 0;
 
+// API loader
 async function loadQuestions(level) {
   const amount = 10;
   const url = `https://opentdb.com/api.php?amount=${amount}&category=22&difficulty=${level}&type=multiple`;
@@ -76,14 +67,7 @@ async function loadQuestions(level) {
   }
 }
 
-// quiz state and counters
-
-let quizState = { list: [], idx: 0, score: 0, level: null };
-let correctCount = 0;
-let wrongCount = 0;
-
-// Show/Hide helper — pass true to hide 
-
+// Show/Hide helper — pass true to hide
 function showOrHide(elements, showElement) {
   elements.forEach((element) => {
     if (!showElement) {
@@ -93,12 +77,11 @@ function showOrHide(elements, showElement) {
     }
   });
 }
-// API error handler
 
+// API error handler
 function handleApiError() {
   stopTimer();
   showOrHide([quizRefs.screens.quiz], true);
-
   showOrHide([quizRefs.screens.hero], false);
 
   alert("Error fetching data. Please try again later.");
@@ -106,8 +89,8 @@ function handleApiError() {
     location.reload();
   }, 1000);
 }
-// Show/hide loading spinner
 
+// Show/hide loading spinner
 function setLoading(on) {
   if (!loadingRef) return;
   loadingRef.classList.toggle("hide", !on);
@@ -116,8 +99,8 @@ function setLoading(on) {
     b.classList.toggle("disabled", on);
   });
 }
-// Timer
 
+// Timer
 function stopTimer() {
   if (timerId) {
     clearInterval(timerId);
@@ -148,7 +131,6 @@ function startTimer() {
 }
 
 // Start the game
-
 async function startQuiz(level) {
   stopTimer();
   quizState.level = level;
@@ -160,7 +142,6 @@ async function startQuiz(level) {
   if (quizRefs.wrongCountEl) quizRefs.wrongCountEl.textContent = 0;
 
   // Show quiz; hide start and results
-
   const hero = quizRefs.screens.hero;
   const quiz = quizRefs.screens.quiz;
   const results = quizRefs.screens.results;
@@ -168,7 +149,6 @@ async function startQuiz(level) {
   showOrHide([quiz], false);
 
   // Start of quiz setup
-
   quizRefs.level.textContent = level.toUpperCase();
 
   setLoading(true);
@@ -182,7 +162,6 @@ async function startQuiz(level) {
 }
 
 // Display next question and update progress (end if done)
-
 function renderQuestion() {
   if (loadingRef) loadingRef.classList.add("hide");
   const total = quizState.list.length;
@@ -194,11 +173,9 @@ function renderQuestion() {
   quizRefs.question.innerHTML = item.q;
 
   // Shuffle the answer choices
-
   const opts = [...item.options].sort(() => Math.random() - 0.5);
 
   // reset + wire answer buttons
-
   quizRefs.answers.forEach((btn, i) => {
     btn.classList.remove("correct", "wrong", "disabled", "active");
     btn.disabled = false;
@@ -206,12 +183,11 @@ function renderQuestion() {
     btn.onclick = () => handleAnswer(btn, item.correct);
   });
 
-  // START TIMER FOR THIS QUESTION
-
+  // Start timer for this question
   startTimer();
 }
-// Handle an answer: lock buttons, mark correct/wrong, update score, advance
 
+// Handle an answer: lock buttons, mark correct/wrong, update score, advance
 function handleAnswer(btn, correctText) {
   stopTimer();
   quizRefs.answers.forEach((b) => {
@@ -243,7 +219,6 @@ function handleAnswer(btn, correctText) {
 }
 
 // Highlights the correct answer
-
 function handleTimeUp() {
   quizRefs.answers.forEach((b) => {
     b.disabled = true;
@@ -251,7 +226,6 @@ function handleTimeUp() {
   });
 
   // Highlight the correct answer so it’s clear what it was
-
   const currentItem = quizState.list[quizState.idx];
   const correctBtn = quizRefs.answers.find(
     (b) => b.innerHTML === currentItem.correct
@@ -259,14 +233,13 @@ function handleTimeUp() {
   if (correctBtn) correctBtn.classList.add("correct");
 
   // Move on without changing score (unanswered)
-
   setTimeout(() => {
     quizState.idx += 1;
     renderQuestion();
   }, 900);
 }
-// game over
 
+// game over
 function gameOver() {
   stopTimer();
   showOrHide([quizRefs.screens.quiz], true);
@@ -310,7 +283,6 @@ function renderLeaderboard() {
   }
 
   // If there are no saved scores, display the empty state and exit
-
   if (!arr.length) {
     leaderboardEmptyRef.classList.remove("hide");
     leaderboardListRef.innerHTML = "";
@@ -323,6 +295,33 @@ function renderLeaderboard() {
     .join("");
 }
 
+// Error display + simple validators
+function setError(msg = "") {
+  if (!errorLine) return;
+  errorLine.textContent = msg;
+}
+
+function isNameValid(value) {
+  const v = (value || "").trim();
+  return v.length >= 2;
+}
+
+// Visual feedback for selected difficulty
+function markActiveDifficulty(activeBtn) {
+  levelBtns.forEach((b) => b.classList.remove("active"));
+  activeBtn.classList.add("active");
+}
+
+//  Toggle leaderboard panel
+if (toggleLeaderboardBtn) {
+  toggleLeaderboardBtn.addEventListener("click", () => {
+    leaderboardBoxRef.classList.toggle("hide");
+    if (!leaderboardBoxRef.classList.contains("hide")) {
+      renderLeaderboard();
+    }
+  });
+}
+
 // Play again → full reset
 if (quizRefs.playAgain) {
   quizRefs.playAgain.addEventListener("click", () => {
@@ -331,25 +330,6 @@ if (quizRefs.playAgain) {
   });
 }
 
-// Error display + simple validators
-
-function setError(msg = "") {
-  if (!errorLine) return;
-  errorLine.textContent = msg;
-}
-
-function isNameValid(value) {
-  const v = (value || "").trim();
-
-  return v.length >= 2;
-}
-
-// Visual feedback for selected difficulty
-
-function markActiveDifficulty(activeBtn) {
-  levelBtns.forEach((b) => b.classList.remove("active"));
-  activeBtn.classList.add("active");
-}
 // Start on card click + show native validation popup if username is invalid
 levelBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -369,7 +349,6 @@ levelBtns.forEach((btn) => {
 });
 
 // Live username validation
-
 if (nameInput) {
   nameInput.addEventListener("input", () => {
     setError("");
@@ -377,7 +356,6 @@ if (nameInput) {
 }
 
 // Save button: validate and store name
-
 if (saveBtn) {
   saveBtn.addEventListener("click", () => {
     if (!isNameValid(nameInput.value)) {
@@ -390,11 +368,11 @@ if (saveBtn) {
     setError("Saved ✓");
   });
 }
+
 const savedName = localStorage.getItem("gg_username");
 if (savedName) {
   nameInput.value = savedName;
   setError("");
-  
 }
 
 // Clear saved username when going Home
@@ -403,4 +381,3 @@ document.querySelectorAll('a[href="index.html"]').forEach((a) => {
     localStorage.removeItem("gg_username");
   });
 });
-
