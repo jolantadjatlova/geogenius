@@ -6,6 +6,7 @@ This project represents my first fully interactive JavaScript web application, d
 
 GeoGenius was developed to combine fun and learning through interactive geography quizzes.  
 The project demonstrates key JavaScript skills including **API integration**, **DOM manipulation**, and **logic control**.  
+
 I chose this concept to challenge myself to create a dynamic web app that delivers instant feedback and works seamlessly across devices.
 
 ## Fully Functional Interactive Quiz Website
@@ -262,6 +263,7 @@ These principles were considered at every stage of design and testing to ensure 
 ## Agile Development Process
 
 The **GeoGenius** quiz was developed using an **iterative Agile approach**, focusing on building a clear, user-friendly **Minimum Viable Product (MVP)**.  
+
 The workflow was managed through **GitHub Projects** (Kanban board) and **GitHub Issues**, where each user story was assigned a priority using the **MoSCoW** method.  
 
 This ensured that the most essential functionality—such as dynamic question loading, scoring, and responsive design—was developed first, followed by enhancements like the leaderboard and feedback form.
@@ -273,10 +275,10 @@ The scope and requirements of the project are detailed in the [5 Planes of UX](#
 To stay organised and follow an iterative Agile process, I used the following tools throughout the development of **GeoGenius**:
 
 ---
-
 #### GitHub Projects (Kanban)
 
-A **Kanban board** was set up in [GitHub Projects](https://github.com/users/jolantadjatlova/projects/8) to manage all tasks visually.  
+A **Kanban board** was set up in [GitHub Projects](https://github.com/users/jolantadjatlova/projects/8) to manage all tasks visually. 
+
 Tasks were broken down into **user stories** and categorised by status:  
 **To Do → In Progress → Done**
 
@@ -289,7 +291,6 @@ This helped me:
 ![GitHub Projects Board](docs/github-gg-project.png)
 
 ---
-
 #### GitHub Issues
 
 [GitHub Issues](https://github.com/jolantadjatlova/geogenius/issues) were used to:
@@ -324,14 +325,17 @@ This ensured a **focused, realistic development process** that stayed aligned wi
 ### Images
 
 The background image for GeoGenius were generated using **ChatGPT**.  
+
 It depicts a bright blue sky with global landmarks such as the Eiffel Tower, Big Ben, the Statue of Liberty, and Christ the Redeemer — reflecting the quiz’s geographical theme. 
 
 The playful illustration style with planes, birds, and hot-air balloons adds an educational yet fun atmosphere, while keeping the focus on the quiz interface.  
+
 The image was intentionally designed to be light and non-distracting, ensuring readability of the text and buttons.
 
 ### Responsiveness
 
 The GeoGenius website adapts seamlessly to different screen sizes using custom CSS media queries.  
+
 The layout, typography, and interactive elements dynamically adjust to ensure usability and visual balance across **mobile**, **tablet**, and **desktop** devices.  
 
 - All buttons, inputs, and quiz cards remain accessible and easy to tap on smaller screens.  
@@ -343,16 +347,21 @@ To view detailed responsiveness results, see the [Responsiveness Test](#responsi
 # Features
 
 GeoGenius provides a clean, structured, and intuitive layout that makes navigation simple on any device.  
+
 Players can easily start a quiz, change difficulty levels, and access helpful features such as **Instructions**, **Feedback**, and **High Scores**.  
+
 With timed multiple-choice questions, instant right-or-wrong feedback, and visually clear progress tracking, the quiz offers an engaging and educational experience.  
+
 These interactive elements encourage users to test their knowledge repeatedly while improving their geography skills in a fun and motivating way.
 
 ## Existing Features
 
 ### Navbar
 
-A single, responsive, sticky navbar is used across the entire site.  
-It displays the **GeoGenius** brand on the left and two dropdown controls on the right: **Instructions** and **Feedback**.  
+A single, responsive, sticky navbar is used across the entire site. 
+
+It displays the **GeoGenius** brand on the left and two dropdown controls on the right: **Instructions** and **Feedback**. 
+
 On smaller screens, the same navbar collapses into a hamburger menu using Bootstrap’s built-in responsive behavior.
 
 <details><summary><b>Navbar View</b></summary>
@@ -367,10 +376,10 @@ On smaller screens, the same navbar collapses into a hamburger menu using Bootst
   On successful submission, users see a confirmation message on a separate page (`success.html`).
 
 ---
-
 ### Landing View
 
 The quiz is a single-page web app optimized for quick performance.  
+
 The landing area includes:
 
 - The quiz title (**GeoGenius Quiz**)
@@ -378,7 +387,9 @@ The landing area includes:
 - Three **difficulty level cards**: Easy, Medium, and Hard
 
 All buttons feature hover effects, and the active difficulty card highlights clearly.  
+
 Both the **username** and a **difficulty level** must be set to begin.  
+
 Once confirmed, the app fetches 10 geography questions from **Open Trivia DB** based on the chosen difficulty.
 
 
@@ -389,7 +400,6 @@ Once confirmed, the app fetches 10 geography questions from **Open Trivia DB** b
 </details><br/>
 
 ---
-
 ### Question View
 
 Each quiz question is multiple choice and displayed one at a time with four possible answers.  
@@ -408,7 +418,6 @@ Each quiz question is multiple choice and displayed one at a time with four poss
 </details><br/>
 
 ---
-
 ### Final Score View
 
 After the last question, the app displays the player’s results:  
@@ -426,11 +435,12 @@ Two buttons appear:
 </details><br/>
 
 ---
-
 ### High Score
 
 The app saves the **Top 5** scores locally using the browser’s `localStorage`.  
-Players can toggle the leaderboard open or closed with the **High Scores** button to view recent results.  
+
+Players can toggle the leaderboard open or closed with the **High Scores** button to view recent results. 
+
 This helps users track progress and encourages replayability.
 
 <details><summary><b>Player Scores View</b></summary>
@@ -440,7 +450,6 @@ This helps users track progress and encourages replayability.
 </details><br/>
 
 ---
-
 ### Footer
 
 A clean, minimalist footer continues the cool-toned theme and includes two icons:  
@@ -455,11 +464,12 @@ Icons have hover effects for improved user experience.
 </details><br/>
 
 ---
-
 ### Loader
 
-While questions are being fetched from **Open Trivia DB**, a small animated spinner appears inside the quiz card.  
+While questions are being fetched from **Open Trivia DB**, a small animated spinner appears inside the quiz card. 
+
 This prevents the question area from appearing empty.  
+
 If the API fails to respond, a friendly error message prompts the user to retry.
 
 <details><summary><b>Loader</b></summary>
@@ -468,12 +478,16 @@ If the API fails to respond, a friendly error message prompts the user to retry.
 
 </details><br/>
 
+---
+
 ### 404 Page
 
 A custom **404 error page** ensures a smooth, user-friendly experience if someone visits a broken or invalid link.  
+
 It displays a themed message — *“Wrong Coordinates!”* — that fits the geography concept while maintaining a consistent design with the rest of the site.  
 
 To prevent dead ends, the page automatically redirects back to the homepage after a short countdown (handled by `redirect.js`), while a **Navigate Home** button offers an instant manual option.  
+
 This approach aligns with good UX practices for navigation recovery, brand consistency, and accessibility.
 
 <details><summary><b>404 Page View</b></summary>
@@ -593,8 +607,10 @@ Both scripts passed validation successfully.
 
 **Console Review**
 
-All console warnings and errors were resolved prior to submission.  
-A single `console.warn("API failed:", e);` message remains intentionally as a non-fatal alert to aid debugging of API response issues during testing.  
+All console warnings and errors were resolved prior to submission.
+
+A single `console.warn("API failed:", e);` message remains intentionally as a non-fatal alert to aid debugging of API response issues during testing. 
+
 This follows best practice to keep the console clean while still surfacing useful diagnostic information if a network error occurs.
 
 [Back to contents](#contents)
@@ -637,7 +653,8 @@ Both forms rely on built-in HTML5 validation and custom JavaScript error handlin
 
 ### Lighthouse Testing 
 
-GeoGenius was tested using **Chrome DevTools Lighthouse** to evaluate overall site quality across multiple key areas.  
+GeoGenius was tested using **Chrome DevTools Lighthouse** to evaluate overall site quality across multiple key areas. 
+
 This tool inspects and scores the website for the following criteria:
 
 - **Performance** – measures how fast the website loads and responds.  
@@ -718,7 +735,7 @@ Forking the GitHub repository allows you to create a duplicate of a local reposi
 #### Feedback, Advice, and Support
 
 - [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") – Code Institute mentor, for continuous support, detailed feedback, and invaluable guidance throughout the project’s development.  
-- [Rory Patrick Sheridan](https://github.com/Ri-Dearg "Rory Patrick Sheridan") – Code Institute mentor, for constructive feedback and helpful insights during the project’s milestone reviews and final assessment.  
+- [Rory Patrick Sheridan](https://github.com/Ri-Dearg "Rory Patrick Sheridan") – Code Institute mentor, for providing helpful feedback during the final assessment review.
 
 #### Learning Help and Resources
 
@@ -726,6 +743,8 @@ Forking the GitHub repository allows you to create a duplicate of a local reposi
 - [MDN Web Docs](https://developer.mozilla.org/) – for official HTML, CSS, and JavaScript references and examples.  
 - [Stack Overflow](https://stackoverflow.com/) – for troubleshooting and community support.  
 - [W3Schools](https://www.w3schools.com/) – for additional syntax and styling resources.
+- [YouTube](https://youtube.com) - for tutorials and walkthroughs.
+- [CodePen](https://codepen.io/) – used for testing small code snippets, experimenting with logic, and isolating UI behaviour before adding into the main project.
 - **ChatGPT** – used as a supportive tool to clarify coding concepts, structure documentation (README), and refine explanations or error messages during development.
 
 #### Images
@@ -736,6 +755,7 @@ Forking the GitHub repository allows you to create a duplicate of a local reposi
 # Final Tidy-Up
 
 Before submitting, I carefully reviewed and refined all elements of the **GeoGenius** project to ensure it met the Code Institute assessment standards.  
+
 This included final validation of all code, accessibility checks, and thorough proofreading of the README and documentation.  
 
 Through this project, I strengthened my understanding of:
