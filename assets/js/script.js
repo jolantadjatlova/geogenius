@@ -40,6 +40,12 @@ const session = {
   difficulty: null,
 };
 
+function decodeHTML(html) {
+  const txt = document.createElement('textarea');
+  txt.innerHTML = html;
+  return txt.value;
+}
+
 // quiz state and counters
 let quizState = { list: [], idx: 0, score: 0, level: null };
 let correctCount = 0;
@@ -170,7 +176,7 @@ function renderQuestion() {
   const item = quizState.list[quizState.idx];
 
   quizRefs.progress.textContent = `Q${quizState.idx + 1}/${total}`;
-  quizRefs.question.innerHTML = item.q;
+  quizRefs.question.textContent = decodeHTML(item.q);
 
   // Shuffle the answer choices
   const opts = [...item.options].sort(() => Math.random() - 0.5);
@@ -179,7 +185,7 @@ function renderQuestion() {
   quizRefs.answers.forEach((btn, i) => {
     btn.classList.remove("correct", "wrong", "disabled", "active");
     btn.disabled = false;
-    btn.innerHTML = opts[i];
+    btn.textContent = decodeHTML(opts[i]);
     btn.onclick = () => handleAnswer(btn, item.correct);
   });
 
@@ -195,7 +201,7 @@ function handleAnswer(btn, correctText) {
     b.classList.add("disabled");
   });
 
-  const isRight = btn.innerHTML === correctText;
+  const isRight = btn.textContent === decodeHTML(correctText);
 
   if (isRight) {
     btn.classList.add("correct");
@@ -207,7 +213,7 @@ function handleAnswer(btn, correctText) {
     btn.classList.add("wrong");
     wrongCount += 1;
     if (quizRefs.wrongCountEl) quizRefs.wrongCountEl.textContent = wrongCount;
-    const c = quizRefs.answers.find((b) => b.innerHTML === correctText);
+    const c = quizRefs.answers.find((b) => b.textContent === decodeHTML(correctText));
     if (c) c.classList.add("correct");
   }
 
@@ -228,8 +234,8 @@ function handleTimeUp() {
   // Highlight the correct answer so it’s clear what it was
   const currentItem = quizState.list[quizState.idx];
   const correctBtn = quizRefs.answers.find(
-    (b) => b.innerHTML === currentItem.correct
-  );
+  (b) => b.textContent === decodeHTML(currentItem.correct)
+);
   if (correctBtn) correctBtn.classList.add("correct");
 
   // Move on without changing score (unanswered)
