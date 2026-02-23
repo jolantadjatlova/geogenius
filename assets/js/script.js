@@ -296,9 +296,12 @@ function renderLeaderboard() {
   }
   leaderboardEmptyRef.classList.add("hide");
 
-  leaderboardListRef.innerHTML = arr
-    .map((item) => `<li>${item.name || "Player"} — ${item.score}</li>`)
-    .join("");
+  leaderboardListRef.innerHTML = '';
+arr.forEach((item) => {
+  const li = document.createElement('li');
+  li.textContent = `${item.name || "Player"} — ${item.score}`;
+  leaderboardListRef.appendChild(li);
+});
 }
 
 // Error display + simple validators
