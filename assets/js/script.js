@@ -342,14 +342,21 @@ if (quizRefs.playAgain) {
 // Start on card click + show native validation popup if username is invalid
 levelBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    if (!nameInput.checkValidity()) {
-      nameInput.reportValidity();
-      nameInput.focus();
-      return;
-    }
+    const trimmedName = nameInput.value.trim();
+if (trimmedName.length === 0) {
+  errorLine.textContent = "Please enter a valid name";
+  errorLine.classList.remove("hide");
+  return;
+}
 
-    const level = btn.dataset.level;
-    session.username = nameInput.value.trim();
+if (!nameInput.checkValidity()) {
+  nameInput.reportValidity();
+  nameInput.focus();
+  return;
+}
+
+const level = btn.dataset.level;
+session.username = trimmedName;
     session.difficulty = level;
 
     markActiveDifficulty(btn);
